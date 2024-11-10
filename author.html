@@ -1,0 +1,30 @@
+---
+layout: default
+title: Author Details
+---
+
+<div class="author-detail-page">
+    {% assign author_name = page.name | replace: '-', ' ' %} <!-- Normalize spaces for URL slug -->
+    {% assign author_data = site.data.team | where: "name", author_name | first %}
+
+    {% if author_data %}
+    <div class="author-profile">
+        <img src="{{ author_data.image }}" alt="{{ author_data.name }}" class="img-fluid rounded-circle">
+        <h1>{{ author_data.name }}</h1>
+        <p>{{ author_data.description }}</p>
+    </div>
+
+    <h2>Articles by {{ author_data.name }}</h2>
+    <ul class="author-articles">
+        {% assign author_articles = site.posts | where: "author", author_data.name %}
+        {% for post in author_articles %}
+        <li>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>Author details not found.</p>
+    {% endif %}
+</div>

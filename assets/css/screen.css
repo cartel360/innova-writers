@@ -3,6 +3,11 @@ Template Name: Mediumish
 Copyright: Sal, WowThemes.net, https://www.wowthemes.net 
 License: https://www.wowthemes.net/freebies-license/ 
 */
+
+html, body {
+    height: 100%;
+}
+
 @media screen and (min-width:1500px) {
     html { font-size:18px; } /* Increase the font size on higher resolutions */
     .container {max-width:80%;}
@@ -46,6 +51,7 @@ pre {
 
 .main-content {
     min-height: 300px;
+    flex: 1;
 }
 
 .site-content {
@@ -53,6 +59,9 @@ pre {
     padding-top: 1.5rem;
     margin-top: 57px;
     transition: all 0.4s;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 section {

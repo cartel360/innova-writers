@@ -239,3 +239,10 @@ h1, h2, h3, h4, h5, h6 {
 .author-title {
     margin-left: -50px;
 }
+
+.author-profile {
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    text-align: center;
+}

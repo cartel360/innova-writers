@@ -1,54 +1,54 @@
 - name: Billy Okeyo
   image: /assets/images/team/billy.jpg
-  link: /team/billy-okeyo
+  link: /author/billy
   description: "Billy Okeyo is a passionate software engineer specializing in full-stack development, sharing his expertise through engaging articles on building robust web applications. His writing explores the integration of front-end and back-end technologies, emphasizing best practices in coding, version control, and deployment. Billy also focuses on the importance of responsive design and user experience, while infusing his articles with personal reflections to inspire others to connect with their own development journeys."
 
 - name: Andrew Abok
   image: /assets/images/team/andrew.jpg
-  link: /team/andrew-abok
+  link: /author/andrew
   description: "Andrew Abok, a budding Quant, and one who the writers club has helped the most, frequently shares write ups, encouraging discussions about world-building and character development. His imaginative storytelling sparks creativity among his peers, pushing them to explore genres beyond their comfort zones. Andrew’s articles are a testament to his love for writing and his commitment to helping others grow as writers."
 
 - name: Fredrick Kamau
   image: /assets/images/team/fred.jpg
-  link: /team/fredrick-kamau
+  link: /author/fred
   description: "Fredrick Kamau is a passionate software engineer. Through his insightful articles, he educates and inspires fellow developers, encouraging them to address real-world issues in their work. He covers a wide range of topics such as principles of system design, software development challenges, general problem solving skills and work-life balance. Fredrick’s writing is a reflection of his commitment to continuous learning and his desire to help others grow in their careers."
 
 - name: Carlvin Jerry
   image: /assets/images/team/carlvin.jpg
-  link: /team/carlvin-jerry
+  link: /author/carlvin
   description: "Carlvin Jerry, lead Quantitative Engineer writes insightful articles on the role of quantitative analytics in software development. With keen interests in Data Science, functional programming and Statistical modeling, he explores how these techniques benefit the world of software development, algorithmic optimization and data-driven decision-making. His articles cover topics like functional programming, risk modelling, time series forecasting, and the integration of analytics in machine learning, balancing technical depth with accessibility for readers of all expertise levels."
 
 - name: Joseph Ndungi
   image: /assets/images/team/joseph.jfif
-  link: /team/joseph-ndungi
+  link: /author/joseph
   description: "Joseph Ndungi, a dedicated developer, writes insightful articles that simplify complex programming concepts for beginner developers. His articles, featuring practical examples and step-by-step tutorials, bridge the gap between theory and application, helping readers better understand coding languages, development frameworks, debugging, and testing."
 
 - name: Joy Omondi
-  image: /assets/images/team/joy.jfif
-  link: /team/joy-omondi
+  image: /assets/images/team/joy.jpg
+  link: /author/joy
   description: "Joy Omondi, a quantitative analyst/ Data scientist known for her insightful and research-driven blogs that explore the capital and financial markets topics and how technology is used in finance. With expertise in predictive modeling, data visualization, and the application of machine learning in finance, Joy provides a comprehensive view of how advanced analytics can transform financial services. Passionate about bridging the gap between data science and finance, Joy's contributions highlight the strategic role of data in shaping the future of financial markets and driving impactful business decision"
 
 
 - name: Kate Ratemo
   image: /assets/images/team/kate.jpg
-  link: /team/kate-ratemo
+  link: /author/kate
   description: "Kate Ratemo, a web developer, writes articles on building modern web applications, blending her expertise in front-end and back-end technologies like Angular and C# .NET. She focuses on best practices for responsive design, user experience, clean code, accessibility, and performance optimization. Her articles are enhanced with visual aids to clarify complex concepts, while sharing personal insights and challenges to inspire others in tech. Through her work, Kate promotes a sense of community among developers and encourages lifelong learning. "
 
 
 - name: Margaret Maina
-  image: /assets/images/team/margaret.jfif
-  link: /team/margaret-maina
+  image: /assets/images/team/margaret.jpg
+  link: /author/margaret
   description: "Margaret Maina, the deputy head of the Quantitative Engineering department and an aspiring data analyst, writes engaging articles on the intersection of data analysis and software engineering. Her work explores how effective data interpretation can improve decision-making and application performance. Margaret simplifies complex concepts like data visualization, statistical modeling, and machine learning algorithms, making them accessible to both novice and experienced developers."
 
 
 - name: Shawn Ng'iela
   image: /assets/images/team/shawn.jfif
-  link: /team/shawn-ngiela
+  link: /author/shawn
   description: "Shawn Ng'iela, a science fiction enthusiast and passionate software developer, writes captivating articles that explore the intersection of technology and science. He covers futuristic topics like AI in scientific discovery, quantum computing in data analysis, and how software can model natural phenomena. Shawn's storytelling blends humor, creativity, and technical insight, making complex concepts accessible and inspiring innovative ideas. His articles often include hands-on projects, encouraging readers to engage with the material and deepen their understanding of how technology drives scientific innovation."
 
 
 - name: Norman Fwamba
   image: /assets/images/team/norman.jpg
-  link: /team/norman-fwamba
+  link: /author/norman
   description: "Norman Fwamba is a software engineer with a focus on ensuring software quality and reliability through rigorous testing and analysis. He specializes in various testing methodologies, including load, stress, and chaos testing, to identify issues before they affect users. With a background in software development and data analytics, he writes about the importance of data testing throughout the software lifecycle. Outside of his professional work, Norman serves as the Games Master team bonding through engaging activities."
 

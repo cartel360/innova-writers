@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "Exploring the World of Generative AI" 
+title: Exploring the World of Generative AI
 author: Billy Okeyo 
 categories: [ Software Development ]
 tags: [AI]
-image: assets/images/11.jpg
+image: assets/images/gen-ai.png
 description: "Through Generative AI, one of the most recent and great creations of Artificial Intelligence, it is possible to create original works in various social spheres such as art, literature, medicine, information technology, etc."
-featured: true
 ---
 
 Through Generative AI, one of the most recent and great creations of Artificial Intelligence, it is possible to create original works in various social spheres such as art, literature, medicine, information technology, etc. In this respect, this article studies divided into generative AI applications, constituents, advantages and drawbacks, ethics and legality, and sustains growth research, reflecting on its built-in potential to alter sectors and creativity..
