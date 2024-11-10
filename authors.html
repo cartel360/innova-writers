@@ -1,0 +1,33 @@
+---
+layout: default
+title: Authors
+---
+
+<div class="author-section">
+    <h1 class="hero-title">Authors</h1>
+    <p class="hero-description">
+        Meet the team behind the articles. Our authors are experts in their fields and are passionate about sharing their
+        knowledge with you.
+    </p>
+
+    <div class="authors-list pt-3">
+        {% for author in site.data.team %}
+        <div class="author-card">
+            <a href="{{ author.link }}" class="author-link">
+                <div class="author-image">
+                    <img src="{{ author.image }}" alt="{{ author.name }}" class="img-fluid rounded-circle" />
+                </div>
+                <div class="author-info">
+                    <h3 class="author-name">
+                        {{ author.name }}
+                        <span class="author-article-count">({% assign author_articles = site.posts | where: "author",
+                            author.name %}{{ author_articles.size }})</span>
+                    </h3>
+                </div>
+            </a>
+            <p class="author-description">{{ author.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>

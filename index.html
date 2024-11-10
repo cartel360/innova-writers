@@ -1,0 +1,88 @@
+---
+layout: default
+title: Home
+---
+
+{% if page.url == "/" %}
+
+<!--- Team Section 
+=================================================== -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="team text-center">
+            <div class="team-members pt-4">
+                {% for member in site.data.team %}
+                <a href="{{ member.link }}" class="team-member">
+                    <img src="{{ member.image }}" alt="{{ member.name }}" class="member-photo">
+                    <span class="member-tooltip">{{ member.name }}</span>
+                </a>
+                {% endfor %}
+                <div class="member-tooltip"></div>
+            </div>
+            <p class="lead">Meet the people who make it all happen.</p>
+        </div>
+    </div>
+</div>
+<div class="headliner pb-3">
+    <h1 class="hero-title">Believe, Innovate, Create</h1>
+    <p class="hero-description">This blog is dedicated to the curious minds seeking knowledge, innovation, and a fresh
+        perspective on the world around
+        us.</p>
+</div>
+
+{% include search-lunr.html %}
+
+<!-- Featured
+================================================== -->
+<section class="featured-posts">
+    <div class="section-title">
+        <h2><span>Featured</span></h2>
+    </div>
+    <div class="row">
+
+    {% for post in site.posts %}
+
+        {% if post.featured == true %}
+
+            {% include featuredbox.html %}
+
+        {% endif %}
+
+    {% endfor %}
+
+    </div>
+</section>
+
+{% endif %}
+
+<!-- Posts Index
+================================================== -->
+<section class="recent-posts">
+
+    <div class="section-title">
+
+        <h2><span>All Stories</span></h2>
+
+    </div>
+
+    <div class="row listrecent">
+
+        {% for post in paginator.posts %}
+
+        {% include postbox.html %}
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+<!-- Pagination
+================================================== -->
+<div class="bottompagination">
+<div class="pointerup"><i class="fa fa-caret-up"></i></div>
+<span class="navigation" role="navigation">
+    {% include pagination.html %}
+</span>
+</div>
+

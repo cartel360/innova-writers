@@ -1,0 +1,241 @@
+body {
+      font-family: "Inter", Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Source Serif 4", "Times New Roman", Georgia, serif;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: normal;
+    color: var(--heading-font-color);
+}
+
+.hero-title{
+    margin-bottom: 20px;
+    font-size: 72px;
+    line-height: 1.1;
+    color: var(--heading-font-color);
+}
+
+.hero-description {
+    margin: 0 auto;
+    max-width: 780px;
+    font-family: "Source Serif 4", "Times New Roman", Georgia, serif;
+    font-size: 24px;
+    line-height: 1.38;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.team-member {
+    position: relative; /* Position each image within the flow of .team-members */
+    width: 70px;
+    height: 70px;
+    margin-left: -20px; /* Adjust to overlap each image slightly */
+    margin-top: -10px; /* Adjust to raise each image slightly */
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    z-index: auto; /* Ensures layering is correct without specific z-index */
+}
+
+.member-photo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+     border: 4px solid #fff;
+}
+
+.lead {
+    font-size: 16px;
+}
+
+.member-tooltip {
+    position: absolute;
+    margin-top: -20px;
+    /* bottom: 100%;  */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+    pointer-events: none; 
+    z-index: 100; 
+}
+
+.team-member:hover .member-tooltip {
+    opacity: 1; /* Show tooltip on hover */
+}
+
+/* .member-tooltip {
+    position: absolute;
+    bottom: 120%; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 100;
+} */
+ 
+
+.headliner {
+    justify-content: center;
+    text-align: center;
+}
+
+.search-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.bd-search .input-group {
+    display: flex;  /* Aligns input and icon horizontally */
+    align-items: center; /* Vertically centers the items */
+    max-width: 600px;  /* Adjust the width */
+    border-radius: 25px; /* Round corners */
+    overflow: hidden; /* Ensure rounded corners */
+    background-color: #f8f9fa; /* Light background color */
+    border: 1px solid #ccc; /* Light border for the entire input group */
+}
+
+#lunrsearch {
+    border: none;  /* Remove the input field's border */
+    border-radius: 25px 0 0 25px; /* Round left corners */
+    padding: 5px 15px; /* Adjust padding for the input */
+    flex: 1;  /* Make the input take up the remaining space */
+}
+
+.search-icon {
+    font-size: 16px; /* Adjust the size of the icon */
+    padding: 8px 15px; /* Space around the icon */
+    background-color: #f8f9fa; /* Match background color */
+    border-left: 1px solid #ccc; /* Border between the input and icon */
+    cursor: pointer; /* Show pointer on hover */
+}
+
+/* General styles for the author section */
+.author-section {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Style the title */
+.page-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* Style the authors list to display in 3 columns */
+.authors-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));  /* 3 columns on large screens, responsive */
+  gap: 20px;
+  justify-items: center;
+}
+
+/* Style each author card */
+.author-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Style the author image (circular) */
+.author-image img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+/* Style the author name */
+.author-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Style the description */
+.author-description {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Style the number of articles */
+.author-articles {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.author-article-count {
+    font-size: 0.85rem;  /* Smaller font size */
+    color: #666;         /* Lighter color to make it less prominent */
+}
+
+.article-meta{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: -3px;
+    margin-bottom: -3px;
+}
+
+.article-tags {
+      display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.article-tags .article-tag{
+    padding: 6px 16px;
+    margin: 3px 6px 3px 0;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 60px;
+    color: #000;
+    transition: all .2s;
+    background-color: #f2f2f2;
+}
+
+.article-date {
+    display: flex;
+    align-items: center;
+    margin-left: 6px;
+    font-size: 13px;
+}
+
+.article-info {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.author-title {
+    margin-left: -50px;
+}
