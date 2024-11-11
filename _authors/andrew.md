@@ -2,7 +2,7 @@
 layout: author
 short_name: Andrew
 name: Andrew Abok
-position: Software Engineer
+position: Quantitative Engineer
 ---
 
 Billy Okeyo is a passionate software engineer specializing in full-stack development, sharing his expertise through engaging articles on building robust web applications. His writing explores the integration of front-end and back-end technologies, emphasizing best practices in coding, version control, and deployment. Billy also focuses on the importance of responsive design and user experience, while infusing his articles with personal reflections to inspire others to connect with their own development journeys.

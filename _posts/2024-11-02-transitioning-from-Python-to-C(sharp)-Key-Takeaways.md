@@ -2,9 +2,9 @@
 layout: post
 title: "Transitioning from TypeScript and Python to C#"
 author: Joseph Ndungi
-categories: [Python]
+categories: [Software Development]
 image: assets/images/transition.png
-tags: [Python and C#]
+tags: [Python, C#]
 description: Transitioning to .NET over the past few months and diving into C# to create web APIs has been an exciting shift from my journey with TypeScript and Python. I’ve been using ASP.NET Core for minimal APIs, specifically leveraging the ICarterModule.
 ---
 
