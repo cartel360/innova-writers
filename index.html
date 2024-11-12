@@ -7,22 +7,25 @@ title: Home
 
 <!--- Team Section 
 =================================================== -->
+
+
 <div class="row">
     <div class="col-md-12">
         <div class="team text-center">
             <div class="team-members pt-4">
                 {% for member in site.data.team %}
-                <a href="{{ member.link }}" class="team-member">
-                    <img src="{{ member.image }}" alt="{{ member.name }}" class="member-photo">
-                    <span class="member-tooltip">{{ member.name }}</span>
-                </a>
+                <div class="team-member-wrapper">
+                    <a href="{{ member.link }}" class="team-member" data-name="{{ member.name }}">
+                        <img src="{{ member.image }}" alt="{{ member.name }}" class="member-photo">
+                    </a>
+                </div>
                 {% endfor %}
-                <div class="member-tooltip"></div>
             </div>
             <p class="lead">Meet the people who make it all happen.</p>
         </div>
     </div>
 </div>
+
 <div class="headliner pb-3">
     <h1 class="hero-title">Believe, Innovate, Create</h1>
     <p class="hero-description">This blog is dedicated to the curious minds seeking knowledge, innovation, and a fresh
@@ -86,3 +89,24 @@ title: Home
 </span>
 </div>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+            const teamMembers = document.querySelectorAll(".team-member");
+
+            teamMembers.forEach(member => {
+                const tooltip = document.createElement("div");
+                tooltip.classList.add("tooltip");
+                tooltip.innerText = member.getAttribute("data-name");
+                member.parentElement.appendChild(tooltip);
+
+                member.addEventListener("mouseenter", () => {
+                    tooltip.classList.add("visible");
+                });
+
+                member.addEventListener("mouseleave", () => {
+                    tooltip.classList.remove("visible");
+                });
+            });
+        });
+
+</script>
