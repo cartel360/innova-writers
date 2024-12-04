@@ -7,7 +7,6 @@ tags: [Optimization,F#]
 image: assets/images/bfgs.png
 description: "Through Generative AI, one of the most recent and great creations of Artificial Intelligence, it is possible to create original works in various social spheres such as art, literature, medicine, information technology, etc."
 math: true
-featured: true
 ---
 
 

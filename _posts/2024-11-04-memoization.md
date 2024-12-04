@@ -6,7 +6,6 @@ categories: [ Software Development ]
 tags: [F#, Optimization, Functional Programming, Caching, Software Development]
 image: assets/images/memoization.png
 description: "Serverless computing, often referred to as Function-as-a-Service (FaaS), is a cloud computing model where cloud providers automatically manage the infrastructure, allowing developers to focus solely on writing code without the need to provision or maintain servers."
-featured: true
 ---
 
 
