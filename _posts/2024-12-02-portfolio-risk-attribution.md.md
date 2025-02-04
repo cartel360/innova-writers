@@ -8,7 +8,6 @@ description: A Guide to Calculating Risk Contributions in Portfolio Management U
 canonical: 
 tags: [Risk, Portfolio Management, Volatility]
 useMath: true
-featured: true
 ---
 
 **Risk contribution** helps quantify how much each asset in a portfolio contributes to its overall risk. However, unlike with portfolio returns, a key aspect of portfolio risk is that its measures —like volatility—  must adhere to certain statistical properties such as **monotonicity**, **sub-additivity**, **homogeneity**, and **translation invariance**. The non-linear nature of these formulae therefore makes it a chellenge to split apart and determine individual contributions of each asset to the overal portfolio risk.  

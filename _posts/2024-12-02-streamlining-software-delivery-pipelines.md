@@ -6,7 +6,6 @@ author: Norman Fwamba
 tags: [CI/CD]
 categories: [Development, Architecture]
 description: Delivering quality software quickly is more critical than ever in today's software development industry. Continuous Integration and Continuous Delivery (CI/CD) pipelines have become essential tools for development teams to transition code seamlessly from development to production
-featured: true
 ---
 
 ## CI/CD Pipeline: Delivering Quality Software Quickly
