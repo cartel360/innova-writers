@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Innova Admitted to the CMA Regulatory Sandbox
-author: Billy Okeyo
+author: Admin
 categories: [Financial & Capital Markets]
 image: assets/images/cma.jpg
 tags: [CMA]  

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Innova at Dev-Craft 2016
-author: Billy Okeyo
+author: Admin
 categories: [Technology & Engineering]
 image: assets/images/development.jpg
 tags: []  

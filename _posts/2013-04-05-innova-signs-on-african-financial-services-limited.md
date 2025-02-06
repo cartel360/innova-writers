@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Innova signs on African Financial Services Limited
-author: Billy Okeyo
+author: Admin
 categories: [Technology & Engineering]
 image: assets/images/innova-team.png
 tags: []  

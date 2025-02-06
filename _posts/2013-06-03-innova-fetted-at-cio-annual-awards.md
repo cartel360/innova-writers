@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Innova Feted at the CIO Annual Awards Ceremony
-author: Billy Okeyo
+author: Admin
 categories: [Technology & Engineering]
 image: assets/images/innova-team.png
 tags: []  

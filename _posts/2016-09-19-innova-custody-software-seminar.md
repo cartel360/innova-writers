@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Innova Custody Software Seminar
-author: Billy Okeyo
+author: Admin
 categories: [Technology & Engineering]
 image: assets/images/technology.jpg
 tags: []  

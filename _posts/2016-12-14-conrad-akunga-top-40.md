@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Innova’s Conrad Akunga Awarded at the 2016 Business Daily Top 40 Under 40
-author: Billy Okeyo
+author: Admin
 categories: [Growth]
 image: assets/images/innova-team.png
 tags: []  
