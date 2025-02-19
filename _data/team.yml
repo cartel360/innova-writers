@@ -1,6 +1,7 @@
 - name: Billy Okeyo
   image: /assets/images/team/billy.jpg
   link: /author/billy
+  social-link : https://www.linkedin.com/in/billy-okeyo
   description: "Billy Okeyo is a passionate software engineer specializing in full-stack development, sharing his expertise through engaging articles on building robust web applications. His writing explores the integration of front-end and back-end technologies, emphasizing best practices in coding, version control, and deployment. Billy also focuses on the importance of responsive design and user experience, while infusing his articles with personal reflections to inspire others to connect with their own development journeys. Billy is the lead writer, responsible for guiding the writing efforts of the team."
 
 - name: Andrew Abok
@@ -10,7 +11,8 @@
 
 - name: Fredrick Kamau
   image: /assets/images/team/fred.jpg
-  link: /author/fred
+  link: /author/fred\
+  social-link: https://www.linkedin.com/in/fredrick-kamau-211a42119/
   description: "Fredrick Kamau is a passionate software engineer. Through his insightful articles, he educates and inspires fellow developers, encouraging them to address real-world issues in their work. He covers a wide range of topics such as principles of system design, software development challenges, general problem solving skills and work-life balance. Fredrick’s writing is a reflection of his commitment to continuous learning and his desire to help others grow in their careers."
 
 - name: Carlvin Jerry
@@ -21,11 +23,13 @@
 - name: Joseph Ndungi
   image: /assets/images/team/joseph.jfif
   link: /author/joseph
+  social-link: https://joseph-ndungi.vercel.app/
   description: "Joseph Ndungi, a dedicated developer, writes insightful articles that simplify complex programming concepts for beginner developers. His articles, featuring practical examples and step-by-step tutorials, bridge the gap between theory and application, helping readers better understand coding languages, development frameworks, debugging, and testing."
 
 - name: Joy Omondi
   image: /assets/images/team/joy.jpg
   link: /author/joy
+  social-link: https://www.linkedin.com/in/joy-recho-10487a188/
   description: "Joy Omondi, a quantitative analyst/ Data scientist known for her insightful and research-driven blogs that explore the capital and financial markets topics and how technology is used in finance. With expertise in predictive modeling, data visualization, and the application of machine learning in finance, Joy provides a comprehensive view of how advanced analytics can transform financial services. Passionate about bridging the gap between data science and finance, Joy's contributions highlight the strategic role of data in shaping the future of financial markets and driving impactful business decision"
 
 
