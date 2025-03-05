@@ -6,7 +6,6 @@ categories: [Book Review]
 image: assets/images/book.jpg
 tags: [books]
 description: Not too long ago, I came across this amazing book called *The Four Agreements* written by Don Miguel Ruiz. I saw a video about it, and it immediately caught my attention. The guy in the video spoke passionately about how the book shifted his perspective on so many things he never thought it would. Naturally, I was curious, so I decided to check it out
-featured: true
 ---
 
 Not too long ago, I came across this amazing book called *The Four Agreements* written by Don Miguel Ruiz. I saw a video about it, and it immediately caught my attention. The guy in the video spoke passionately about how the book shifted his perspective on so many things he never thought it would. Naturally, I was curious, so I decided to check it out. Looking back, I’d say this book was the real beginning of my self-improvement journey. It completely changed the way I look at life.

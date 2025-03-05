@@ -56,3 +56,7 @@
   link: /author/norman
   description: "Norman Fwamba is a software engineer with a focus on ensuring software quality and reliability through rigorous testing and analysis. He specializes in various testing methodologies, including load, stress, and chaos testing, to identify issues before they affect users. With a background in software development and data analytics, he writes about the importance of data testing throughout the software lifecycle. Outside of his professional work, Norman serves as the Games Master team bonding through engaging activities."
 
+- name: Omega Makena
+  image: /assets/images/team/omega.jpg
+  link: /author/omega
+  description: " Omega Makena is a dedicated Computer Science student at Mount Kenya University with a passion for artificial intelligence and machine learning. She actively explores innovative solutions to real-world challenges, leveraging data-driven insights to develop impactful projects. Her journey in tech has equipped her with strong programming skills and a solid understanding of algorithms, data structures, and software development principles. Omega thrives on collaboration and enjoys sharing knowledge within the developer community."
