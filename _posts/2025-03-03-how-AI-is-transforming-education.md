@@ -6,7 +6,6 @@ image: assets/images/edu-ai.jpg
 categories: [Software Development ]
 tags: [AI, Education]
 description: Artificial intelligence is revolutionizing industries, and education is no exception. The integration of AI in learning environments is enhancing accessibility, personalization, and efficiency in ways that were once unimaginable. From intelligent tutoring systems to automated administrative tasks, AI is reshaping how knowledge is delivered and absorbed
-featured: true
 ---
 
 Artificial intelligence is revolutionizing industries, and education is no exception. The integration of AI in learning environments is enhancing accessibility, personalization, and efficiency in ways that were once unimaginable. From intelligent tutoring systems to automated administrative tasks, AI is reshaping how knowledge is delivered and absorbed. As these technologies continue to evolve, they hold the potential to bridge educational gaps and create more inclusive learning experiences worldwide.

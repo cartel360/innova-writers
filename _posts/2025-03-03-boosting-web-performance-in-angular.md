@@ -6,6 +6,7 @@ categories: [Software Development]
 image: assets/images/webopt.webp
 tags: [Angular, Performance]
 description: As technology continues to advance, web users don’t have the patience for slow-loading applications. Achieving top-tier performance isn’t just about writing clean code; it’s about knowing and applying the right techniques and tools to boost your app’s speed and responsiveness.
+render_with_liquid: false
 ---
 
 As technology continues to advance, web users don’t have the patience for slow-loading applications. Achieving top-tier performance isn’t just about writing clean code; it’s about knowing and applying the right techniques and tools to boost your app’s speed and responsiveness.

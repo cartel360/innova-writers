@@ -7,7 +7,6 @@ tags: [Derivatives, Option Pricing, Python]
 categories : [Software Development]
 description: Have you ever wondered why options prices can vary so much, even when the underlying asset's price hasn’t changed? The answer lies in a powerful concept called implied volatility. Today, we’ll explore what implied volatility is, why it matters, and how it’s calculated using models like Black-Scholes
 math: true
-featured: true
 ---
 
 Have you ever wondered why options prices can vary so much, even when the underlying asset's price hasn’t changed? The answer lies in a powerful concept called implied volatility. Today, we’ll explore what implied volatility is, why it matters, and how it’s calculated using models like Black-Scholes
