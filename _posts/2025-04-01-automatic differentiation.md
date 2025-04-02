@@ -1,6 +1,6 @@
 ---
 layout: post
-title: AUTOMATIC DIFFERENTIATION (Part 2)
+title: Automatic Differentiation (Part 2)
 author: Andrew Abok
 categories: [Optimization]
 tags: [Optimization,Machine Learning]
