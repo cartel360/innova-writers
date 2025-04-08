@@ -5,6 +5,8 @@ description: "Innova is a fintech company based in Nairobi - Kenya"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.jpg'
 baseurl: ""
+url: "https://blogs.innova.co.ke"
+default-share-image: 'assets/images/innova.png'
 google_analytics: 'UA-XXXXX-Y'
 disqus: 'demowebsite'
 mailchimp-list: 'your-mailchimp-list-id'

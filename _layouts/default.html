@@ -12,6 +12,32 @@
 
     <title>{{ page.title }} | {{site.name}}</title>
 
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="{{ page.title }} | {{ site.name }}">
+    <meta name="description" content="{{ page.excerpt | strip_html | truncate: 160 }}">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:title" content="{{ page.title }} | {{ site.name }}">
+    <meta property="og:description" content="{{ page.excerpt | strip_html | truncate: 160 }}">
+    {% if page.image %}
+    <meta property="og:image" content="{{ site.url }}{{ page.image }}">
+    {% else %}
+    <meta property="og:image" content="{{ site.url }}/{{ site.default-share-image }}">
+    {% endif %}
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="twitter:title" content="{{ page.title }} | {{ site.name }}">
+    <meta property="twitter:description" content="{{ page.excerpt | strip_html | truncate: 160 }}">
+    {% if page.image %}
+    <meta property="twitter:image" content="{{ site.url }}{{ page.image }}">
+    {% else %}
+    <meta property="twitter:image" content="{{ site.url }}/{{ site.default-share-image }}">
+    {% endif %}
+
     {% seo %}
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
