@@ -11,7 +11,7 @@ description: In today's API landscape, GraphQL has emerged as a powerful alterna
 
 In today's API landscape, GraphQL has emerged as a powerful alternative to REST, offering clients exactly the data they need in a single request. This article explores GraphQL implementation in .NET, focusing on practical patterns and real-world considerations that go beyond basic tutorials.
 
-Incase you are new to GraphQL have a look at this <a href="https://billy-okeyo.netlify.app/posts/introduction-to-graphql/" target="_blank">Introduction to GrapohQL</a>
+Incase you are new to GraphQL have a look at this <a href="https://billy-okeyo.netlify.app/posts/introduction-to-graphql/" target="_blank">Introduction to GraphQL</a>
 
 ## Why GraphQL in .NET?
 
