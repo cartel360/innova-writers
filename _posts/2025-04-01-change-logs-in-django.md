@@ -7,7 +7,6 @@ image: assets/images/django-change-logs.jpg
 tags: [Python, Django, ChangeLogs]
 description: Change logs (or audit logs) are crucial for tracking modifications to your data over time. They provide transparency, accountability, and can be invaluable for debugging or compliance purposes. In this comprehensive guide, I'll walk through several approaches to implementing change logs in Django, complete with practical examples.
 render_with_liquid: false
-featured: true
 ---
 
 Change logs (or audit logs) are crucial for tracking modifications to your data over time. They provide transparency, accountability, and can be invaluable for debugging or compliance purposes. In this comprehensive guide, I'll walk through several approaches to implementing change logs in Django, complete with practical examples.
