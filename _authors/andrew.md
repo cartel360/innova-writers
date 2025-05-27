@@ -5,4 +5,4 @@ name: Andrew Abok
 position: Quantitative Engineer
 ---
 
-Billy Okeyo is a passionate software engineer specializing in full-stack development, sharing his expertise through engaging articles on building robust web applications. His writing explores the integration of front-end and back-end technologies, emphasizing best practices in coding, version control, and deployment. Billy also focuses on the importance of responsive design and user experience, while infusing his articles with personal reflections to inspire others to connect with their own development journeys.
+Andrew Abok, a budding Quant, and one who the writers club has helped the most, frequently shares write ups, encouraging discussions about world-building and character development. His imaginative storytelling sparks creativity among his peers, pushing them to explore genres beyond their comfort zones. Andrew’s articles are a testament to his love for writing and his commitment to helping others grow as writers

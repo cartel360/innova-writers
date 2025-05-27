@@ -6,7 +6,6 @@ categories: [Scaling]
 tags: [Scaling]
 image: assets/images/scaling.jpg
 description: Through difficult experiences we discovered that scaling processes lack glamour. This article examines developmental trajectory by scrutinizing the missteps that results in failure while emphasizing the essential need for constructing a robust base to support growth. 
-featured: true
 ---
 
 Several months ago, my friends and I eagerly anticipated our coastal journey via the SGR. Every detail had been arranged; tickets secured, luggage prepared, alarms activated. The travel day unfolded without a hitch until an unexpected complication emerged. The expected arrival of one team member at the terminus faced an unexpected delay.
