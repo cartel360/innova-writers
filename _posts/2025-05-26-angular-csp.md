@@ -6,7 +6,6 @@ categories: [Software Development]
 image: assets/images/angular-csp.jpg
 tags: [Angular, CSP, Security, Web Development]
 description: Content Security Policy (CSP) represents a fundamental shift in web application security, moving from traditional "allow all" models to a strict whitelist approach. For Angular developers, implementing CSP requires deep understanding of both the framework's internals and modern security practices.
-featured: true
 ---
 
 
