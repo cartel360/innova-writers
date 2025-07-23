@@ -6,7 +6,6 @@ categories: [Options Pricing, Capital Markets]
 tags: [python,capital markets]
 image: assets/images/lstm.jpeg
 description: Long Short-Term Memory (LSTM) networks are a powerful type of recurrent neural network (RNN) that can learn long-term dependencies in sequential data. In this blog post, we will explore how LSTMs can be applied to options pricing, a complex task that requires understanding the temporal dynamics of financial markets.
-featured: true
 ---
 
 

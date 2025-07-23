@@ -6,7 +6,6 @@ categories: [Cybersecurity]
 image: assets/images/digital-signature.jpg
 tags: [Digital Signature, Cryptography, Cybersecurity]
 description: A digital signature is a mathematical technique used to validate the authenticity and integrity of a document. Digital signatures create a virtual fingerprint which is unique to a user or entity to protect information in digital documents or messages. A signature confirms that the information originates from the sender and has not been altered
-featured: true
 ---
 
 ### Real world analogy
