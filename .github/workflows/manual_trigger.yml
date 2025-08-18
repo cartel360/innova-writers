@@ -1,0 +1,31 @@
+name: Manual Trigger
+
+on:
+  workflow_dispatch:
+    inputs:
+      test_file_url:
+        description: 'URL of test file'
+        required: true
+      test_file_name:
+        description: 'Name of test file'
+        required: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger webhook
+        run: |
+          curl -X POST https://api.github.com/repos/${{ github.repository }}/dispatches \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.everest-preview+json" \
+            -d '{
+              "event_type": "teams_article_upload",
+              "client_payload": {
+                "date": "${{ github.event.inputs.date || '2023-11-01' }}",
+                "files": [{
+                  "name": "${{ github.event.inputs.test_file_name }}",
+                  "contentUrl": "${{ github.event.inputs.test_file_url }}"
+                }]
+              }
+            }'

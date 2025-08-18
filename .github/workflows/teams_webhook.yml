@@ -1,0 +1,41 @@
+name: Teams Webhook Receiver
+
+on:
+  repository_dispatch:
+    types: [teams_article_upload]
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          
+      - name: Process articles
+        run: |
+          # Create date directory
+          mkdir -p articles/${{ github.event.client_payload.date }}
+          cd articles/${{ github.event.client_payload.date }}
+          
+          # Download each file
+          {% raw %}
+          for file in $(echo '${{ toJSON(github.event.client_payload.files) }}' | jq -c '.[]'); do
+            name=$(echo "$file" | jq -r '.name')
+            url=$(echo "$file" | jq -r '.contentUrl')
+            echo "Downloading $name from $url"
+            curl -L -o "$name" "$url"
+          done
+          {% endraw %}
+          
+      - name: Commit and push
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add .
+          git commit -m "Add articles for ${{ github.event.client_payload.date }}"
+          git push
