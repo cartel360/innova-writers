@@ -6,7 +6,6 @@ categories: [Technology, Debugging, C#, Blazor]
 tags: [C#, Blazor]
 image: https://akifmt.github.io/dotnet/2024-01-20-blazor-.net8-migrating-app-from-.net-6-or-.net-7-to-.net-8/blazor_dotnet8.jpg
 description: "A comprehensive guide to the Blazor framework, its features, and how it simplifies web development with C#."
-featured: true
 ---
 
 
