@@ -24,11 +24,11 @@
     {
       "type": "pull_request",
       "parameters": {
-        "require_code_owner_review": false,
-        "require_last_push_approval": false,
-        "dismiss_stale_reviews_on_push": false,
-        "required_approving_review_count": 0,
-        "required_review_thread_resolution": false
+        "require_code_owner_review": true,
+        "require_last_push_approval": true,
+        "dismiss_stale_reviews_on_push": true,
+        "required_approving_review_count": 1,
+        "required_review_thread_resolution": true
       }
     },
     {
@@ -41,6 +41,18 @@
         ],
         "strict_required_status_checks_policy": false
       }
+    }
+  ],
+  "bypass_actors": [
+    {
+      "actor_id": 5,
+      "actor_type": "RepositoryRole",
+      "bypass_mode": "always"
+    },
+    {
+      "actor_id": 4,
+      "actor_type": "RepositoryRole",
+      "bypass_mode": "always"
     }
   ]
 }

@@ -1,0 +1,12 @@
+# Code owners for article pull requests.
+#
+# Listed users/teams must approve PRs that change posts or cover images.
+# Only users with Admin or Maintain access can merge to main (see ruleset).
+#
+# Add reviewers using GitHub usernames or org teams, for example:
+#   /_posts/ @cartel360 @your-github-username
+#
+# Update the handles below to match your reviewers.
+
+/_posts/                    @cartel360
+/assets/images/             @cartel360
