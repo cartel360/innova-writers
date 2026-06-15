@@ -7,7 +7,7 @@ description: A deep dive on where the cost lies at when serving llm models.
 categories: [Large Lanaguge Models]
 tags: [LLM,Python]
 math: true
-image : assets\images\serving-llms.png
+image : assets/images/serving-llms.png
 ---
 ## Introduction
 
