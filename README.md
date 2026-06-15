@@ -4,11 +4,14 @@ The official blog for [Innova Limited](https://innova.co.ke) — articles on sof
 
 **Live site:** [blogs.innova.co.ke](https://blogs.innova.co.ke)
 
-## About
+## Get started
 
-Innova Writers is a Jekyll static site. Articles live in `_posts/`, author profiles in `_authors/`, and cover images in `assets/images/`.
+### Clone the repository
 
-## Local development
+```bash
+git clone https://github.com/cartel360/innova-writers.git
+cd innova-writers
+```
 
 ### Prerequisites
 
@@ -22,41 +25,43 @@ bundle install
 bundle exec jekyll serve
 ```
 
-Open [http://localhost:4000](http://localhost:4000) in your browser.
+Open [http://localhost:4000](http://localhost:4000) in your browser to preview the site.
 
-## Contributing
+## Contributing an article
 
-All article changes must go through a pull request. Direct pushes to `main` are blocked.
+All article changes go through a pull request. Do not push directly to `main`.
 
-### Workflow for writers
+### 1. Create a branch
 
-1. Create a branch from `main`:
-   ```bash
-   git checkout main
-   git pull
-   git checkout -b article/your-article-slug
-   ```
+```bash
+git checkout main
+git pull
+git checkout -b article/your-article-slug
+```
 
-2. Add your article and cover image:
-   - Post file: `_posts/YYYY-MM-DD-your-article-slug.md`
-   - Cover image: `assets/images/your-cover-image.jpg`
+### 2. Add your files
 
-3. Commit and push your branch:
-   ```bash
-   git add _posts/ assets/images/
-   git commit -m "Add article: Your Article Title"
-   git push -u origin article/your-article-slug
-   ```
+- **Article:** `_posts/YYYY-MM-DD-your-article-slug.md`
+- **Cover image:** `assets/images/your-cover-image.jpg`
 
-4. Open a pull request into `main` on GitHub.
+### 3. Commit and push
 
-5. Wait for the **Validate articles** check to pass.
+```bash
+git add _posts/ assets/images/
+git commit -m "Add article: Your Article Title"
+git push -u origin article/your-article-slug
+```
 
-6. A reviewer listed in `.github/CODEOWNERS` must approve the PR.
+### 4. Open a pull request
 
-7. Only reviewers with **Maintain** or **Admin** access (or the repo owner) can merge after approval.
+Open a PR into `main` on GitHub and wait for:
 
-### Required article format
+1. The **Validate articles** check to pass
+2. A reviewer to approve your PR
+
+A reviewer will merge your article once it is approved.
+
+## Article format
 
 ```yaml
 ---
@@ -73,7 +78,12 @@ featured: false
 Your article content starts here...
 ```
 
-### Rules enforced in CI
+- `author` must match your name exactly as listed in `_data/team.yml`
+- `featured` is optional (`true` or `false`)
+
+## Validation rules
+
+These are checked automatically when you open a pull request:
 
 | Rule | Requirement |
 |------|-------------|
@@ -86,38 +96,11 @@ Your article content starts here...
 | Cover image | Required, must exist under `assets/images/` |
 | Body | At least 200 characters after front matter |
 
-### Roles and permissions
-
-| Role | Who | Can do |
-|------|-----|--------|
-| **Write** | Article writers | Push branches, open pull requests |
-| **Maintain** | Designated reviewers | Approve PRs, merge after review |
-| **Admin** | Repo owner | Approve PRs, merge after review |
-
-Writers with **Write** access cannot merge to `main`. Only **Maintain** and **Admin** users can merge.
-
-After the ruleset is active:
-
-- Writers cannot push directly to `main`
-- Changes must be merged through a pull request
-- The **Validate articles** check must pass before merge
-- A **CODEOWNERS** reviewer must approve the PR
-- Authors cannot approve their own PR after pushing new commits
-- Only **Admin** and **Maintain** users can merge to `main`
-
 ## Project structure
 
 ```
-_posts/              Article markdown files
+_posts/              Your article markdown files
+assets/images/       Cover images for articles
+_data/team.yml       Author names for the author field
 _authors/            Author profile pages
-_data/team.yml       Author names used in post front matter
-assets/images/       Cover images and site assets
-_includes/           Reusable HTML partials
-_layouts/            Page templates
-.github/             CI workflows, CODEOWNERS, and branch rulesets
-scripts/             Post validation script
 ```
-
-## License
-
-See [LICENSE.txt](LICENSE.txt).
