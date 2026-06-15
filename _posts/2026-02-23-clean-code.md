@@ -6,7 +6,7 @@ categories: [Programming, Software Development, Best Practices]
 tags: [Clean Code, Technical Debt, Software Development, Best Practices, Coding Standards]
 description: "Every developer faces the dilemma of choosing between writing clean, maintainable code and implementing quick hacks to meet tight deadlines. This article explores the importance of both approaches and offers strategies to balance them effectively."
 image: assets/images/clean-code.jpg
-featured: true
+featured: false
 ---
 
 

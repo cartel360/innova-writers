@@ -91,7 +91,7 @@
 
     <!-- Begin Menu Navigation
 ================================================== -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top mediumnavigation nav-down site-navbar">
 
         <div class="container pr-0">
 
@@ -142,15 +142,16 @@
 
         <!-- Begin Footer
 ================================================== -->
-        <footer class="footer">
+        <footer class="footer site-footer">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-sm-6 text-center text-lg-left">
-                        <!-- Copyright © {{ site.time | date: "%Y" }} {{ site.name }} -->
-                        Copyright ©  2025 | {{ site.name }}
+                <div class="row align-items-center footer-inner">
+                    <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+                        <p class="footer-copy mb-0">
+                            &copy; {{ site.time | date: "%Y" }} {{ site.name }}
+                        </p>
                     </div>
-                    <div class="col-md-6 col-sm-6 text-center text-lg-right">
-                        <a target="_blank" href="https://innova.co.ke/">Innova Limited</a> 
+                    <div class="col-md-6 text-center text-md-right">
+                        <a class="footer-link" target="_blank" rel="noopener noreferrer" href="https://innova.co.ke/">Innova Limited</a>
                     </div>
                 </div>
             </div>
