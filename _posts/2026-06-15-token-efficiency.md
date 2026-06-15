@@ -1,10 +1,13 @@
 ---
 layout: post
+author: Andrew Abok
 title: Where Does Performance Go When Serving an LLM
 date: 2026-06-15 00:00:00 +0300
-categories: [LArge Lanaguge Models]
+description: A deep dive on where the cost lies at when serving llm models.
+categories: [Large Lanaguge Models]
 tags: [LLM,Python]
 math: true
+image : assets\images\serving-llms.png
 ---
 ## Introduction
 
