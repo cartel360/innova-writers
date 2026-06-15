@@ -1,7 +1,6 @@
 {
   "name": "Protect main branch",
   "target": "branch",
-  "source_type": "Repository",
   "enforcement": "active",
   "conditions": {
     "ref_name": {
@@ -41,23 +40,6 @@
         ],
         "strict_required_status_checks_policy": false
       }
-    }
-  ],
-  "bypass_actors": [
-    {
-      "actor_id": null,
-      "actor_type": "OrganizationAdmin",
-      "bypass_mode": "always"
-    },
-    {
-      "actor_id": 5,
-      "actor_type": "RepositoryRole",
-      "bypass_mode": "always"
-    },
-    {
-      "actor_id": 4,
-      "actor_type": "RepositoryRole",
-      "bypass_mode": "always"
     }
   ]
 }
