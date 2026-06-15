@@ -4,25 +4,47 @@
 <style>
     .lunrsearchresult .title {color: #d9230f;}
     .lunrsearchresult .url {color: silver;}
-    .lunrsearchresult a {display: block; color: #777;}
-    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
+    .lunrsearchresult a {display: block; color: #777; padding: 8px 12px;}
+    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none; background-color: #f8f9fa;}
     .lunrsearchresult a:hover .title {text-decoration: underline;}
+    .lunrsearchresult.no-results {padding: 8px 12px; color: #777;}
+    #lunrsearchresults {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        max-height: 400px;
+        overflow-y: auto;
+    }
+    #lunrsearchresults ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .bd-search {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+    }
 </style>
 
 <div class="search-section">
 <form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
     <div class="input-group">
         <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255"
-            placeholder="Type and enter..." />
+            placeholder="Search articles..." autocomplete="off" />
         <i class="fa fa-search search-icon"></i>
+    </div>
+    <div id="lunrsearchresults">
+        <ul></ul>
     </div>
 </form>
 </div>
 
-
-
-<div id="lunrsearchresults">
-    <ul></ul>
-</div>
-
-<script src="{{site.baseurl}}/assets/js/lunrsearchengine.js"></script>
+<script src="{{site.baseurl}}/lunrsearchengine.js"></script>
