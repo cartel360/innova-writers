@@ -1,0 +1,36 @@
+name: Validate articles
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "_posts/**"
+      - "assets/images/**"
+      - "scripts/validate_posts.py"
+      - ".github/workflows/validate-articles.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate-articles:
+    name: Validate articles
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Validate changed posts
+        run: python scripts/validate_posts.py --base "origin/${{ github.base_ref }}"
