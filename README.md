@@ -96,7 +96,6 @@ Your article content starts here...
 
 Writers with **Write** access cannot merge to `main`. Only **Maintain** and **Admin** users can merge.
 
-
 After the ruleset is active:
 
 - Writers cannot push directly to `main`
