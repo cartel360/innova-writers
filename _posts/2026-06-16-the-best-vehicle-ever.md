@@ -4,7 +4,7 @@ title: " Two Wheels and a Heartbeat"
 author: Carlvin Jerry
 categories: [Life]
 tags: [Biking, Motorcycles]
-description: "Why the motorcycle is the best vehicle ever made."
+description: "An exploration of why the motorcycle remains the most versatile, efficient, and rewarding vehicle ever created."
 image: assets/images/Bikes1.jpg
 featured: false
 ---
