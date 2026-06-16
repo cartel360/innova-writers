@@ -5,12 +5,9 @@ author: Carlvin Jerry
 categories: [Life]
 tags: [Biking, Motorcycles]
 description: "Why the motorcycle is the best vehicle ever made."
-image: assets/images/your-cover-image.jpg
+image: assets/images/Bikes1.jpg
 featured: false
 ---
-
-![](../assets/images/Bikes1.jpg)
-
 
 *For riders — and for anyone who's ever felt the road call their name.*
 
