@@ -4,6 +4,7 @@ title: "Progress Is Hard to See When You're Living It"
 date: 2026-06-16
 author: Joseph Ndungi
 tags: [career, growth, software engineering, life]
+categories: [Blog Post]
 canonical_url: ""
 description: Went digging through old code and found out I've grown more than I thought.
 image: assets/images/progress-and-growth.jpg
