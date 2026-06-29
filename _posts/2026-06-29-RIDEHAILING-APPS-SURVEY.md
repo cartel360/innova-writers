@@ -5,7 +5,7 @@ author: Joy Omondi
 categories: [Economic Analysis, Research, Regression Analysis]
 tags: [Research]
 description: "An exploratory study investigating the influence of digital transportation platforms on mobility, trade, transport expenditure, and food consumption behaviour using survey data and regression analysis."
-image: assets/images/Cover-Image.jpg
+image: assets/images/cover image.jpg
 
 ---
 
