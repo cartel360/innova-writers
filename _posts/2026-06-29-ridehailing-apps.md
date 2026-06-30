@@ -25,14 +25,14 @@ This analysis explores whether digital transportation platforms are associated w
 ### 1. Mobility 
 #### To what extent do ride-hailing platforms influence people's ability to make their usual trips?
 
-![Respondents ability to make trips in the absence of ride hailing apps](assets/images/First image.png)
+![Respondents ability to make trips in the absence of ride hailing apps](../assets/images/First.png)
 
 
 64% of the respondents indicated that they would make the trips anyway without the platforms being present. This shows that for a majority the digital platforms have come in to compliment the other means of transport already existing like Matatus.
 
 ---
 
-![Trip Distribution](assets/images/second image.png)
+![Trip Distribution](../assets/images/second.png)
 
 
 The figure above shows the distribution of data in terms of trips. The data is rightly skewed since we have a majority of respondents making between 1 to 7 trips in a week and less than 30 percent on the high and very high tiers.
@@ -47,14 +47,14 @@ Most respondents reported that their total number of trips increased after adopt
 
 ---
 
-![Primary modes of transport](assets/images/5.png)
+![Primary modes of transport](../assets/images/5.png)
 
 
 The figure above shows that despite the increase in the usage of ride hailing apps, the traditional modes of transport and public transport still tops the list. Therefore, the ride hailing apps can be seen as a substitute for the traditional means of transport as opposed to the notion that its the main means of transport in this day and age. 
 
 ---
 
-![Number of trips made in the last seven days](assets/images/6.png")
+![Number of trips made in the last seven days](../assets/images/6.png")
 
 
 Nearly half of respondents (49.3%) made 4–7 trips outside their home in the past week, making this the most common travel pattern. Around one in four respondents (23.9%) made 8–14 trips, while 21.8% made 1–3 trips. Only 5.0% made 15 or more trips. Overall, the findings suggest that most people make a moderate number of weekly trips, with relatively few travelling very frequently.
@@ -93,7 +93,7 @@ Notes:
 
 ```
 
-![Effect of predictors on weekly trips](assets/images/predictors.png")
+![Effect of predictors on weekly trips](../assets/images/predictors.png)
 
 The regression results indicate that age and income have opposite relationships with weekly travel frequency. Age has a small positive effect, suggesting that older respondents tend to make slightly more weekly trips. In contrast, respondents with a monthly income above KSh 100,000 make, on average, about 1.5 fewer trips per week than respondents in the reference income group. The larger magnitude of the income coefficient indicates that income has a stronger influence on weekly travel behaviour than age.
 
@@ -141,7 +141,7 @@ The ordered logit model (n = 1,198) reveals that age and income are negatively a
 ### 2. Trade
 #### Which reasons constitutes most trips taken by the respondents?
 
-![Purpose of trips in the Last 7 days](assets/images/Trade.png)
+![Purpose of trips in the Last 7 days](../assets/images/Trade.png)
 
 
 Work-related trips were the most common purpose for travel during the past seven days, followed by shopping trips. Food pickup and delivery accounted for a smaller share of trips, while business trips were the least common. Overall, the findings suggest that most travel was driven by daily necessities and employment-related activities, rather than business or delivery purposes.
@@ -260,7 +260,7 @@ These findings suggest that delivery platforms expand consumers’ accessible ch
 
 ---
 
-![Percentage of meals ordered via the app](assets/images/meals.png)
+![Percentage of meals ordered via the app](../assets/images/meals.png)
 
 Most respondents (60.1%) did not order any meals through mobile apps. About one in four respondents (26.7%) ordered between one and two meals, while only a small proportion ordered meals more frequently (10.6% ordered 3–5 meals and 2.7% ordered six or more). Overall, the findings indicate that food ordering through mobile apps is relatively infrequent among most respondents.
 The low uptake of food ordering services may reflect user preferences and local market conditions. Many consumers may prefer preparing meals at home, purchasing food directly from nearby restaurants or vendors, or may not have regular access to restaurants that offer delivery through ride-hailing platforms. In addition, delivery fees, food prices, and limited availability of delivery services in some areas may discourage frequent use.
@@ -296,7 +296,7 @@ inc_100k          1.0484      0.119      8.828      0.000       0.816       1.28
 
 ```
 
-![Factors influencing variety of meals ordered](assets/images/variety.png)
+![Factors influencing variety of meals ordered](../assets/images/variety.png)
 
 *Values above 1 indicate a higher likelihood of reporting greater food variety.*
 
