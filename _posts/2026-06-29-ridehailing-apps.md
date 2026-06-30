@@ -19,11 +19,17 @@ Improved mobility has the potential to influence several aspects of daily life. 
 
 This analysis explores whether digital transportation platforms are associated with increased mobility, greater economic activity, and changes in food consumption patterns. 
 
+We conducted research on where we got 70 respondents. However we simulated the data to get more data points and to enable accuracy of the analysis.
+
+
 ---
 
 
 ### 1. Mobility 
-#### To what extent do ride-hailing platforms influence people's ability to make their usual trips?
+
+It is often assumed that the introduction of the ride hailing apps has brought about a reduction in the usage of the other means of transport.
+Therefore in this first chart we explore whether the respondents would still make the trips in the absence of ride hailing apps.
+This helps us assess the reliance on the ride hailing apps.
 
 ![Respondents ability to make trips in the absence of ride hailing apps](../assets/images/First.png)
 
@@ -32,6 +38,8 @@ This analysis explores whether digital transportation platforms are associated w
 
 ---
 
+Below we look at the number of trips made by individuals across the data.
+
 ![Trip Distribution](../assets/images/second.png)
 
 
@@ -39,6 +47,7 @@ The figure above shows the distribution of data in terms of trips. The data is r
 
 
 ---
+It can be assumed that now with the convenience of the ride hailing apps, individuals would make more trips. Below we explore this hypothesis based on the respondents answers. 
 
 ![Change in number of trips taken using ride hailing apps](../assets/images/third.png)
 
@@ -47,6 +56,8 @@ Most respondents reported that their total number of trips increased after adopt
 
 
 ---
+We also looked at the popular primary means of transport among the respondents. This was supposed to show whether Ride hailing apps is now more popular or rather regularly used among respondents.
+
 
 ![Primary modes of transport](../assets/images/5.png)
 
@@ -54,6 +65,7 @@ Most respondents reported that their total number of trips increased after adopt
 The figure above shows that despite the increase in the usage of ride hailing apps, the traditional modes of transport and public transport still tops the list. Therefore, the ride hailing apps can be seen as a substitute for the traditional means of transport as opposed to the notion that its the main means of transport in this day and age. 
 
 ---
+Additionally, we look at how many trips the respondent made in the last seven days of the survey being conducted. It is important to not that of these trips, ride hailing is not in isolation. It is a culmination of all the modes of transport. 
 
 ![Number of trips made in the last seven days](../assets/images/six.png)
 
@@ -141,6 +153,7 @@ The ordered logit model (n = 1,198) reveals that age and income are negatively a
 ---
 ### 2. Trade
 #### Which reasons constitutes most trips taken by the respondents?
+The biggest question we ask here is do the ride hailing apps enable economic activity?
 
 ![Purpose of trips in the Last 7 days](../assets/images/Trade.png)
 
@@ -260,6 +273,7 @@ These findings suggest that delivery platforms expand consumers’ accessible ch
 
 
 ---
+The big question we ask here is whether ride hailing apps have drawn people away from normal cooking and buying food locally to ordering foods online which brings convenience and saves on time. We therefore assess this by looking at the number of orders one makes in a week. 
 
 ![Percentage of meals ordered via the app](../assets/images/meals.png)
 
