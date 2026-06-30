@@ -2,7 +2,7 @@
 layout: post
 title: Assessing the Impact of Digital Transportation Platforms on Mobility, Trade, and Food Consumption Patterns
 author: Joy Omondi
-categories: [Economic Analysis, Research, Regression Analysis]
+categories: [Economic Analysis, Research Analysis, Regression Analysis]
 tags: [Research]
 description: "An exploratory study investigating the influence of digital transportation platforms on mobility, trade, transport expenditure, and food consumption behaviour using survey data and regression analysis."
 image: assets/images/cover image.jpg
@@ -39,7 +39,8 @@ The figure above shows the distribution of data in terms of trips. The data is r
 
 
 ---
-![Change in number of trips taken using ride hailing apps](assets/images/third image.png)
+
+![Change in number of trips taken using ride hailing apps](../assets/images/third.png)
 
 Most respondents reported that their total number of trips increased after adopting ride-hailing applications. Specifically, 32.6% indicated that their trips increased significantly, while 27.1% reported a slight increase. Therefore one can say that approx. 59% reported that their trip increased with the adoption of ride hailing apps. About 25.1% experienced no change in their travel behaviour, and only 15.2% reported making fewer trips.
 
@@ -54,7 +55,7 @@ The figure above shows that despite the increase in the usage of ride hailing ap
 
 ---
 
-![Number of trips made in the last seven days](../assets/images/6.png")
+![Number of trips made in the last seven days](../assets/images/six.png)
 
 
 Nearly half of respondents (49.3%) made 4–7 trips outside their home in the past week, making this the most common travel pattern. Around one in four respondents (23.9%) made 8–14 trips, while 21.8% made 1–3 trips. Only 5.0% made 15 or more trips. Overall, the findings suggest that most people make a moderate number of weekly trips, with relatively few travelling very frequently.
