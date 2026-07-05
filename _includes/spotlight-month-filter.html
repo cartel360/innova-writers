@@ -1,0 +1,32 @@
+{% assign cy = site.time | date: '%Y' %}
+{% assign cm = site.time | date: '%m' | plus: 0 %}
+{% assign month_names = "January,February,March,April,May,June,July,August,September,October,November,December" | split: "," %}
+{% assign filter_current_key = include.active_key %}
+{% if filter_current_key == nil or filter_current_key == '' %}
+    {% assign filter_current_key = cy | append: '-' %}
+    {% if cm < 10 %}
+        {% assign filter_current_key = filter_current_key | append: '0' %}
+    {% endif %}
+    {% assign filter_current_key = filter_current_key | append: cm %}
+{% endif %}
+
+<div class="spotlight-page__filter">
+    <label class="spotlight-page__filter-label" for="spotlightMonthSelect">View month</label>
+    <select id="spotlightMonthSelect" class="spotlight-page__filter-select" aria-label="Select spotlight month">
+        {% if spotlight.month_options and spotlight.month_options.size > 0 %}
+            {% for option in spotlight.month_options %}
+            <option value="{{ option.key }}"{% if option.key == filter_current_key %} selected{% endif %}>{{ option.label }}</option>
+            {% endfor %}
+        {% else %}
+            {% for m in (1..cm) reversed %}
+                {% assign idx = m | minus: 1 %}
+                {% assign option_key = cy | append: '-' %}
+                {% if m < 10 %}
+                    {% assign option_key = option_key | append: '0' %}
+                {% endif %}
+                {% assign option_key = option_key | append: m %}
+                <option value="{{ option_key }}"{% if option_key == filter_current_key %} selected{% endif %}>{{ month_names[idx] }} {{ cy }}</option>
+            {% endfor %}
+        {% endif %}
+    </select>
+</div>

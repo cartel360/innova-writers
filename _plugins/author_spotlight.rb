@@ -12,13 +12,12 @@ module Jekyll
       end
     end
 
-    def compute(site)
-      now = site.time || Time.now
-      month = now.month
-      year = now.year
-      month_label = now.strftime('%B %Y')
+    def month_key(year, month)
+      format('%04d-%02d', year, month)
+    end
 
-      stats = site.data.fetch('team', []).map do |member|
+    def build_author_stats(site, year, month)
+      site.data.fetch('team', []).map do |member|
         name = member['name']
         posts = site_posts(site).select { |post| post.data['author'] == name }
         month_posts = posts.select { |post| post.date.month == month && post.date.year == year }
@@ -44,25 +43,53 @@ module Jekyll
           end
         }
       end
+    end
 
+    def compute_month(site, year, month)
+      stats = build_author_stats(site, year, month)
       active_this_month = stats.select { |author| author['month_posts'].positive? }
       ranked_month = active_this_month.sort_by do |author|
         [-author['month_posts'], -author['featured_month'], author['name']]
       end
 
-      badges = build_badges(stats, ranked_month)
-
       {
-        'month_label' => month_label,
+        'key' => month_key(year, month),
+        'month_label' => Time.new(year, month, 1).strftime('%B %Y'),
         'month' => month,
         'year' => year,
         'top_authors' => ranked_month.first(3),
         'active_authors' => ranked_month,
         'all_authors' => stats.sort_by { |author| [-author['month_posts'], -author['total_posts'], author['name']] },
-        'badges' => badges,
-        'total_month_articles' => active_this_month.sum { |author| author['month_posts'] },
-        'message' => site.data.dig('author-spotlight', 'message')
+        'badges' => build_badges(stats, ranked_month),
+        'total_month_articles' => active_this_month.sum { |author| author['month_posts'] }
       }
+    end
+
+    def compute(site)
+      now = site.time || Time.now
+      year = now.year
+      current_month = now.month
+
+      months = {}
+      month_options = []
+
+      (1..current_month).each do |month|
+        data = compute_month(site, year, month)
+        months[data['key']] = data
+        month_options << { 'key' => data['key'], 'label' => data['month_label'] }
+      end
+
+      month_options.reverse!
+      current_key = month_key(year, current_month)
+      current = months.fetch(current_key)
+
+      current.merge(
+        'year' => year,
+        'current_key' => current_key,
+        'months' => months,
+        'month_options' => month_options,
+        'message' => site.data.dig('author-spotlight', 'message')
+      )
     end
 
     def slugify(text)

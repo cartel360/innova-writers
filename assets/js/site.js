@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     initCopyLink();
     initSmoothScroll();
     initCategoryFilter();
+    initSpotlightMonthFilter();
 });
 
 function initStickyNav() {
@@ -131,4 +132,198 @@ function initCategoryFilter() {
             empty.classList.toggle("categories-page__empty--hidden", visible > 0);
         }
     });
+}
+
+function initSpotlightMonthFilter() {
+    var page = document.getElementById("spotlightPage");
+    var dataEl = document.getElementById("spotlight-data");
+    var select = document.getElementById("spotlightMonthSelect");
+    if (!page || !select) return;
+
+    var data = null;
+    if (dataEl) {
+        try {
+            data = JSON.parse(dataEl.textContent);
+        } catch (error) {
+            data = null;
+        }
+    }
+
+    if (data && data.month_options && data.month_options.length) {
+        select.innerHTML = data.month_options.map(function (option) {
+            return (
+                '<option value="' + String(option.key).replace(/"/g, "&quot;") + '">' +
+                String(option.label).replace(/</g, "&lt;") +
+                "</option>"
+            );
+        }).join("");
+    }
+
+    if (!data || !data.months) return;
+
+    var baseUrl = page.getAttribute("data-baseurl") || "";
+    var monthLabel = document.getElementById("spotlightMonthLabel");
+    var summary = document.getElementById("spotlightSummary");
+    var dynamic = document.getElementById("spotlightDynamic");
+
+    function escapeHtml(text) {
+        return String(text)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;");
+    }
+
+    function articleLabel(count) {
+        return count === 1 ? "article" : "articles";
+    }
+
+    function authorLabel(count) {
+        return count === 1 ? "author" : "authors";
+    }
+
+    function renderLeaderboard(authors) {
+        return authors
+            .filter(function (author) { return author.total_posts > 0; })
+            .map(function (author) {
+                var activeClass = author.month_posts > 0 ? " is-active" : "";
+                return (
+                    '<div class="spotlight-leaderboard__row' + activeClass + '">' +
+                        '<a href="' + baseUrl + escapeHtml(author.link) + '" class="spotlight-leaderboard__author">' +
+                            '<img src="' + baseUrl + escapeHtml(author.image) + '" alt="' + escapeHtml(author.name) + '">' +
+                            "<span>" + escapeHtml(author.name) + "</span>" +
+                        "</a>" +
+                        '<div class="spotlight-leaderboard__metrics">' +
+                            '<span class="spotlight-metric"><strong>' + author.month_posts + "</strong> this month</span>" +
+                            '<span class="spotlight-metric"><strong>' + author.featured_month + "</strong> featured</span>" +
+                            '<span class="spotlight-metric"><strong>' + author.total_posts + "</strong> total</span>" +
+                        "</div>" +
+                    "</div>"
+                );
+            })
+            .join("");
+    }
+
+    function renderPodium(month) {
+        if (!month.top_authors || month.top_authors.length === 0) {
+            return (
+                '<section class="spotlight-section spotlight-section--empty text-center" data-spotlight-section="empty">' +
+                    '<h2 class="spotlight-section__title">No spotlight yet for ' + escapeHtml(month.month_label) + "</h2>" +
+                    '<p class="spotlight-page__message">Once articles are published this month, top contributors will appear here automatically.</p>' +
+                "</section>"
+            );
+        }
+
+        var cards = month.top_authors.map(function (author, index) {
+            var rank = index + 1;
+            var articles = (author.month_articles || []).map(function (article) {
+                var featured = article.featured ? '<span class="spotlight-chip">Featured</span>' : "";
+                return (
+                    "<li>" +
+                        '<a href="' + baseUrl + escapeHtml(article.url) + '">' + escapeHtml(article.title) + "</a>" +
+                        featured +
+                    "</li>"
+                );
+            }).join("");
+
+            var articlesBlock = articles
+                ? '<div class="spotlight-card__articles">' +
+                    '<p class="spotlight-card__articles-label">Published in ' + escapeHtml(month.month_label) + "</p>" +
+                    "<ul>" + articles + "</ul>" +
+                  "</div>"
+                : "";
+
+            return (
+                '<article class="spotlight-card spotlight-card--rank-' + rank + '">' +
+                    '<div class="spotlight-card__rank">#' + rank + "</div>" +
+                    '<a href="' + baseUrl + escapeHtml(author.link) + '" class="spotlight-card__profile">' +
+                        '<img src="' + baseUrl + escapeHtml(author.image) + '" alt="' + escapeHtml(author.name) + '" class="spotlight-card__avatar">' +
+                        '<h3 class="spotlight-card__name">' + escapeHtml(author.name) + "</h3>" +
+                    "</a>" +
+                    '<ul class="spotlight-card__stats">' +
+                        "<li><strong>" + author.month_posts + "</strong> this month</li>" +
+                        "<li><strong>" + author.featured_month + "</strong> featured</li>" +
+                        "<li><strong>" + author.total_posts + "</strong> all time</li>" +
+                    "</ul>" +
+                    articlesBlock +
+                "</article>"
+            );
+        }).join("");
+
+        return (
+            '<section class="spotlight-section" data-spotlight-section="podium">' +
+                '<h2 class="spotlight-section__title">Top contributors this month</h2>' +
+                '<div class="spotlight-podium">' + cards + "</div>" +
+            "</section>"
+        );
+    }
+
+    function renderBadges(badges) {
+        if (!badges || badges.length === 0) return "";
+
+        var items = badges.map(function (badge) {
+            return (
+                '<a href="' + baseUrl + escapeHtml(badge.link) + '" class="spotlight-badge">' +
+                    '<img src="' + baseUrl + escapeHtml(badge.image) + '" alt="' + escapeHtml(badge.author) + '" class="spotlight-badge__avatar">' +
+                    '<div class="spotlight-badge__body">' +
+                        '<span class="spotlight-badge__label">' + escapeHtml(badge.label) + "</span>" +
+                        '<strong class="spotlight-badge__author">' + escapeHtml(badge.author) + "</strong>" +
+                        '<span class="spotlight-badge__detail">' + escapeHtml(badge.detail) + "</span>" +
+                    "</div>" +
+                "</a>"
+            );
+        }).join("");
+
+        return (
+            '<section class="spotlight-section" data-spotlight-section="badges">' +
+                '<h2 class="spotlight-section__title">This month&apos;s highlights</h2>' +
+                '<div class="spotlight-badges">' + items + "</div>" +
+            "</section>"
+        );
+    }
+
+    function renderMonth(key) {
+        var month = data.months[key];
+        if (!month) return;
+
+        if (monthLabel) monthLabel.textContent = month.month_label;
+        if (summary) {
+            var activeCount = month.active_authors ? month.active_authors.length : 0;
+            summary.textContent =
+                month.total_month_articles + " " + articleLabel(month.total_month_articles) +
+                " published by " + activeCount + " " + authorLabel(activeCount) +
+                " in " + month.month_label + ".";
+        }
+
+        if (dynamic) {
+            dynamic.innerHTML =
+                renderPodium(month) +
+                renderBadges(month.badges) +
+                '<section class="spotlight-section spotlight-section--leaderboard" data-spotlight-section="leaderboard">' +
+                    '<h2 class="spotlight-section__title">Full leaderboard</h2>' +
+                    '<div class="spotlight-leaderboard" id="spotlightLeaderboard">' +
+                        renderLeaderboard(month.all_authors || []) +
+                    "</div>" +
+                "</section>";
+        }
+
+        select.value = key;
+
+        var url = new URL(window.location.href);
+        if (key === data.current_key) {
+            url.searchParams.delete("month");
+        } else {
+            url.searchParams.set("month", key);
+        }
+        window.history.replaceState({}, "", url);
+    }
+
+    select.addEventListener("change", function () {
+        renderMonth(select.value);
+    });
+
+    var requestedMonth = new URLSearchParams(window.location.search).get("month");
+    if (requestedMonth && data.months[requestedMonth]) {
+        renderMonth(requestedMonth);
+    }
 }

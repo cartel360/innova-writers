@@ -1,0 +1,40 @@
+{% assign month = include.month %}
+{% if month.top_authors.size > 0 %}
+<section class="spotlight-section" data-spotlight-section="podium">
+    <h2 class="spotlight-section__title">Top contributors this month</h2>
+    <div class="spotlight-podium">
+        {% for author in month.top_authors %}
+        <article class="spotlight-card spotlight-card--rank-{{ forloop.index }}">
+            <div class="spotlight-card__rank">#{{ forloop.index }}</div>
+            <a href="{{ site.baseurl }}{{ author.link }}" class="spotlight-card__profile">
+                <img src="{{ site.baseurl }}{{ author.image }}" alt="{{ author.name }}" class="spotlight-card__avatar">
+                <h3 class="spotlight-card__name">{{ author.name }}</h3>
+            </a>
+            <ul class="spotlight-card__stats">
+                <li><strong>{{ author.month_posts }}</strong> this month</li>
+                <li><strong>{{ author.featured_month }}</strong> featured</li>
+                <li><strong>{{ author.total_posts }}</strong> all time</li>
+            </ul>
+            {% if author.month_articles.size > 0 %}
+            <div class="spotlight-card__articles">
+                <p class="spotlight-card__articles-label">Published in {{ month.month_label }}</p>
+                <ul>
+                    {% for article in author.month_articles %}
+                    <li>
+                        <a href="{{ site.baseurl }}{{ article.url }}">{{ article.title }}</a>
+                        {% if article.featured %}<span class="spotlight-chip">Featured</span>{% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% else %}
+<section class="spotlight-section spotlight-section--empty text-center" data-spotlight-section="empty">
+    <h2 class="spotlight-section__title">No spotlight yet for {{ month.month_label }}</h2>
+    <p class="spotlight-page__message">Once articles are published this month, top contributors will appear here automatically.</p>
+</section>
+{% endif %}
