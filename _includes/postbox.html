@@ -22,7 +22,7 @@
                 <div class="article-meta pb-3">
                     <div class="article-tags">
                         {% for category in post.categories limit:2 %}
-                        <a class="article-tag" href="{{ site.baseurl }}/categories#{{ category | url_escape | strip | replace: ' ', '-' }}">{{
+                        <a class="article-tag" href="{{ site.baseurl }}/category/{{ category | slugify }}/">{{
                             category | camelcase }}</a>
                         {% endfor %}
                     </div>

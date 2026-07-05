@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     initBackToTop();
     initCopyLink();
     initSmoothScroll();
+    initCategoryFilter();
 });
 
 function initStickyNav() {
@@ -104,5 +105,30 @@ function initSmoothScroll() {
             event.preventDefault();
             target.scrollIntoView({ behavior: "smooth", block: "start" });
         });
+    });
+}
+
+function initCategoryFilter() {
+    var input = document.getElementById("categoryFilter");
+    var grid = document.getElementById("categoriesGrid");
+    var empty = document.getElementById("categoriesEmpty");
+    if (!input || !grid) return;
+
+    var cards = grid.querySelectorAll(".category-card");
+
+    input.addEventListener("input", function () {
+        var query = input.value.trim().toLowerCase();
+        var visible = 0;
+
+        cards.forEach(function (card) {
+            var name = card.getAttribute("data-name") || "";
+            var show = !query || name.indexOf(query) !== -1;
+            card.style.display = show ? "" : "none";
+            if (show) visible += 1;
+        });
+
+        if (empty) {
+            empty.classList.toggle("categories-page__empty--hidden", visible > 0);
+        }
     });
 }

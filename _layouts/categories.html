@@ -1,23 +1,31 @@
 ---
-title: "Categories"
 layout: default
-permalink: "/categories.html"
 ---
 
-<div class="row listrecent">
-{% for category in site.categories %}
-<div class="section-title col-md-12 mt-4">
-<h2 id="{{ category[0] | replace: " ","-" }}">Category <span class="text-capitalize">{{ category[0] }}</span></h2>
-</div>
-{% assign pages_list = category[1] %}
-{% for post in pages_list %}
-{% if post.title != null %}
-{% if group == null or group == post.group %}
-{% include postbox.html %}
-{% endif %}
-{% endif %}
-{% endfor %}
-{% assign pages_list = nil %}
-{% assign group = nil %}
-{% endfor %}
+<div class="categories-page">
+    <header class="categories-page__header text-center">
+        <h1 class="categories-page__title">Browse by category</h1>
+        <p class="categories-page__subtitle">Pick a topic to explore articles — no endless scrolling.</p>
+        <div class="categories-page__filter">
+            <input type="search" id="categoryFilter" class="form-control" placeholder="Filter categories..." aria-label="Filter categories">
+        </div>
+    </header>
+
+    <div class="categories-grid" id="categoriesGrid">
+        {% assign sorted_categories = site.categories | sort %}
+        {% for category in sorted_categories %}
+            {% assign category_name = category[0] %}
+            {% assign category_posts = category[1] %}
+            {% assign category_slug = category_name | slugify %}
+            {% assign post_count = category_posts | size %}
+            <a href="{{ site.baseurl }}/category/{{ category_slug }}/"
+               class="category-card"
+               data-name="{{ category_name | downcase }}">
+                <span class="category-card__name">{{ category_name }}</span>
+                <span class="category-card__count">{{ post_count }} article{% if post_count != 1 %}s{% endif %}</span>
+            </a>
+        {% endfor %}
+    </div>
+
+    <p class="categories-page__empty categories-page__empty--hidden" id="categoriesEmpty">No categories match your search.</p>
 </div>
