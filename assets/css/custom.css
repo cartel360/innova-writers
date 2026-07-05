@@ -430,7 +430,6 @@ h1, h2, h3, h4, h5, h6 {
 .recent-posts {
     margin-bottom: 2.5rem;
     position: relative;
-    z-index: 1;
 }
 
 /* Featured cards (horizontal layout) */
@@ -467,6 +466,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== Homepage hero ===== */
 .home-hero {
     position: relative;
+    z-index: 20;
     padding: 2.5rem 0 2rem;
     margin: 0 0 2rem;
     overflow: visible;
@@ -545,11 +545,17 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
     position: relative;
     z-index: 30;
+    isolation: isolate;
 }
 
 .home-hero .search-section,
-.home-hero .bd-search {
+.home-hero .bd-search,
+.home-hero .input-group {
     overflow: visible;
+}
+
+.home-hero #lunrsearchresults {
+    z-index: 2000;
 }
 
 /* ===== Search (shared) ===== */
