@@ -1053,3 +1053,339 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-muted);
     margin: 0;
 }
+
+/* ===== Authors Spotlight page ===== */
+.authors-spotlight-link {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.authors-spotlight-link a {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.authors-spotlight-link a:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.spotlight-page {
+    max-width: 960px;
+    margin: 0 auto 4rem;
+    padding: 0 1rem 2rem;
+}
+
+.spotlight-section--leaderboard {
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+}
+
+.spotlight-page__header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.spotlight-page__eyebrow {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.spotlight-page__title {
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    margin-bottom: 0.35rem;
+}
+
+.spotlight-page__month {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+}
+
+.spotlight-page__message,
+.spotlight-page__summary {
+    color: var(--color-muted);
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.spotlight-section {
+    margin-bottom: 3rem;
+}
+
+.spotlight-section__title {
+    font-size: 1.35rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.spotlight-podium {
+    display: grid;
+    gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+    .spotlight-podium {
+        grid-template-columns: repeat(3, 1fr);
+        align-items: start;
+    }
+
+    .spotlight-card--rank-1 {
+        order: 2;
+    }
+
+    .spotlight-card--rank-2 {
+        order: 1;
+    }
+
+    .spotlight-card--rank-3 {
+        order: 3;
+    }
+}
+
+.spotlight-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1.35rem;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+}
+
+.spotlight-card--rank-1 {
+    border-color: rgba(44, 166, 185, 0.45);
+    box-shadow: var(--shadow-md);
+}
+
+.spotlight-card__rank {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+.spotlight-card__profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    margin-bottom: 1rem;
+}
+
+.spotlight-card__profile:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.spotlight-card__avatar {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.75rem;
+    border: 3px solid var(--color-border);
+}
+
+.spotlight-card--rank-1 .spotlight-card__avatar {
+    width: 104px;
+    height: 104px;
+    border-color: var(--color-primary);
+}
+
+.spotlight-card__name {
+    font-size: 1.15rem;
+    margin: 0;
+}
+
+.spotlight-card__stats {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: var(--color-muted);
+}
+
+.spotlight-card__stats strong {
+    color: var(--heading-font-color);
+}
+
+.spotlight-card__articles-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-muted);
+    margin-bottom: 0.5rem;
+}
+
+.spotlight-card__articles ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.92rem;
+}
+
+.spotlight-card__articles li {
+    margin-bottom: 0.45rem;
+}
+
+.spotlight-card__articles a {
+    color: var(--heading-font-color);
+    font-weight: 600;
+}
+
+.spotlight-chip {
+    display: inline-block;
+    margin-left: 0.35rem;
+    padding: 0.1rem 0.45rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    background: rgba(44, 166, 185, 0.15);
+    color: var(--color-primary);
+    border-radius: 999px;
+}
+
+.spotlight-badges {
+    display: grid;
+    gap: 0.85rem;
+}
+
+@media (min-width: 640px) {
+    .spotlight-badges {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.spotlight-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.9rem 1rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.spotlight-badge:hover {
+    text-decoration: none;
+    color: inherit;
+    border-color: rgba(44, 166, 185, 0.35);
+    box-shadow: var(--shadow-sm);
+}
+
+.spotlight-badge__avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.spotlight-badge__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    min-width: 0;
+}
+
+.spotlight-badge__label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-accent);
+}
+
+.spotlight-badge__author {
+    font-size: 0.95rem;
+    color: var(--heading-font-color);
+}
+
+.spotlight-badge__detail {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+}
+
+.spotlight-leaderboard {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.spotlight-leaderboard__row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+.spotlight-leaderboard__row.is-active {
+    border-color: rgba(44, 166, 185, 0.45);
+    box-shadow: var(--shadow-sm);
+}
+
+.spotlight-leaderboard__author {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-weight: 600;
+    color: var(--heading-font-color);
+    text-decoration: none;
+}
+
+.spotlight-leaderboard__author img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.spotlight-leaderboard__author:hover {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.spotlight-leaderboard__metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    font-size: 0.85rem;
+    color: var(--color-muted);
+}
+
+.spotlight-metric strong {
+    color: var(--heading-font-color);
+}
+
+.spotlight-section--empty {
+    padding: 2rem 1rem;
+    background: var(--color-surface);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-md);
+}
