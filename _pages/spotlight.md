@@ -2,11 +2,12 @@
 layout: default
 title: Authors Spotlight
 permalink: /spotlight
+classes: page-spotlight
 ---
 
 {% assign spotlight = site.data.author_spotlight %}
 
-<section class="spotlight-page">
+<div class="spotlight-page">
     <header class="spotlight-page__header text-center">
         <p class="spotlight-page__eyebrow">Monthly recognition</p>
         <h1 class="spotlight-page__title">Authors Spotlight</h1>
@@ -84,4 +85,4 @@ permalink: /spotlight
             {% include spotlight-leaderboard.html authors=spotlight.all_authors %}
         </div>
     </section>
-</section>
+</div>

@@ -1076,14 +1076,19 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 1rem 2rem;
 }
 
+body.page-spotlight .site-content {
+    padding-top: 0;
+}
+
 .spotlight-section--leaderboard {
     margin-bottom: 0;
     padding-bottom: 1rem;
 }
 
 .spotlight-page__header {
+    margin-top: 0;
     margin-bottom: 2.5rem;
-    padding-bottom: 1.5rem;
+    padding: 0 0 1.5rem;
 }
 
 .spotlight-page__eyebrow {

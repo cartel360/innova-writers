@@ -79,7 +79,7 @@
 
 {% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
 
-<body class="{{layout}}{% if page.layout == 'post' %} has-reading-progress{% endif %}">
+<body class="{{layout}}{% if page.classes %} {{ page.classes }}{% endif %}{% if page.layout == 'post' %} has-reading-progress{% endif %}">
     {% if page.layout == 'post' %}
     <div class="reading-progress" aria-hidden="true"><div class="reading-progress__bar"></div></div>
     {% endif %}
