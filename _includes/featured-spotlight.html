@@ -1,0 +1,35 @@
+{% assign spotlight = nil %}
+{% for post in site.posts %}
+    {% if post.featured and spotlight == nil %}
+        {% assign spotlight = post %}
+    {% endif %}
+{% endfor %}
+
+{% if spotlight %}
+{% assign author_data = site.data.team | where: "name", spotlight.author | first %}
+<section class="featured-spotlight mb-5">
+    <a href="{{ site.baseurl }}{{ spotlight.url }}" class="featured-spotlight__link">
+        <div class="featured-spotlight__card">
+            <div class="featured-spotlight__media">
+                {% if spotlight.image %}
+                <img src="{% if spotlight.image contains '://' %}{{ spotlight.image }}{% else %}{{ site.baseurl }}/{{ spotlight.image }}{% endif %}"
+                    alt="{{ spotlight.title }}" class="featured-spotlight__image">
+                {% endif %}
+                <span class="featured-spotlight__badge">Featured</span>
+            </div>
+            <div class="featured-spotlight__body">
+                <div class="featured-spotlight__meta">
+                    {% if author_data %}
+                    <span class="featured-spotlight__author">{{ author_data.name }}</span>
+                    {% endif %}
+                    <span class="featured-spotlight__date">{{ spotlight.date | date: "%b %-d, %Y" }}</span>
+                    {% include reading-time.html content=spotlight.content %}
+                </div>
+                <h3 class="featured-spotlight__title">{{ spotlight.title }}</h3>
+                <p class="featured-spotlight__excerpt">{{ spotlight.description | strip_html | truncatewords: 35 }}</p>
+                <span class="featured-spotlight__cta">Read article <i class="fa fa-arrow-right"></i></span>
+            </div>
+        </div>
+    </a>
+</section>
+{% endif %}
