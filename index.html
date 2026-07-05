@@ -13,22 +13,14 @@ title: Home
     <div class="section-title">
         <h2><span>Featured</span></h2>
     </div>
-
-    {% include featured-spotlight.html %}
-
     <div class="row">
-    {% assign spotlight_url = nil %}
-    {% for post in site.posts %}
-        {% if post.featured and spotlight_url == nil %}
-            {% assign spotlight_url = post.url %}
-        {% endif %}
-    {% endfor %}
 
     {% for post in site.posts %}
-        {% if post.featured == true and post.url != spotlight_url %}
+        {% if post.featured == true %}
             {% include featuredbox.html %}
         {% endif %}
     {% endfor %}
+
     </div>
 </section>
 

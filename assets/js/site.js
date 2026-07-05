@@ -1,10 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
     initTeamTooltips();
+    initStickyNav();
     initReadingProgress();
     initBackToTop();
     initCopyLink();
     initSmoothScroll();
 });
+
+function initStickyNav() {
+    var nav = document.querySelector(".site-navbar");
+    if (!nav) return;
+
+    function keepNavVisible() {
+        nav.classList.remove("nav-up");
+        nav.classList.add("nav-down");
+        nav.style.top = "0px";
+        nav.classList.toggle("is-scrolled", window.scrollY > 12);
+    }
+
+    keepNavVisible();
+    window.addEventListener("scroll", keepNavVisible, { passive: true });
+}
 
 function initTeamTooltips() {
     document.querySelectorAll(".team-member").forEach(function (member) {
