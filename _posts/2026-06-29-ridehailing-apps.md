@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Assessing the Impact of Digital Transportation Platforms on Mobility, Trade, and Food Consumption Patterns
+title: The Ride Hailing Paradox, More Trips, Same Spending, and  Barely Any Food Delivery
 author: Joy Omondi
 categories: [Economic Analysis, Research Analysis, Regression Analysis]
 tags: [Research]
@@ -9,7 +9,7 @@ image: assets/images/cover image.jpg
 
 ---
 
-# Assessing the Impact of Digital Transportation Platforms on Mobility, Trade, and Food Consumption Patterns: An Exploratory Analysis
+# The Ride-Hailing Paradox: More Trips, Same Spending, Barely Any Food Delivery
 ---
 ## Background
 ---
@@ -17,9 +17,12 @@ Digital transportation platforms such as Uber, Bolt, LittleCab, and Uber Eats ha
 
 Improved mobility has the potential to influence several aspects of daily life. Individuals may travel more frequently for work, shopping, business, and leisure, while businesses may benefit from increased customer access and more efficient delivery services. In addition, the integration of food delivery services into ride-hailing platforms has introduced new ways of purchasing meals, which may influence food ordering habits and dietary variety.
 
-This analysis explores whether digital transportation platforms are associated with increased mobility, greater economic activity, and changes in food consumption patterns. 
+That said everyone assumes ride-hailing apps are quietly rewiring how Nairobians move, spend, and eat. Uber and Bolt feel popular enough that the story writes itself, that is, matatus lose riders, wallets open wider (people spend more on transport), food delivery apps fill the gap left by less walking and more convenience.
 
-We conducted research on where we got 70 respondents. However we simulated the data to get more data points and to enable accuracy of the analysis.
+However the data tells a messier, more interesting story. In a survey of Nairobi commuters 64% said they'd have made their trip anyway, with or without a ride-hailing app. Transport spending barely moved among the respondents, And only 4 in 10 respondents had ever ordered food through an app at all.
+
+Ride-hailing in Nairobi isn't replacing anything. It's layering on top of a transport system that was already working. Here's what the numbers actually show.
+
 
 
 ---
@@ -27,9 +30,9 @@ We conducted research on where we got 70 respondents. However we simulated the d
 
 ### 1. Mobility 
 
-It is often assumed that the introduction of the ride hailing apps has brought about a reduction in the usage of the other means of transport.
-Therefore in this first chart we explore whether the respondents would still make the trips in the absence of ride hailing apps.
-This helps us assess the reliance on the ride hailing apps.
+The common assumption is that ride-hailing apps have pulled riders away from other transport modes. We tested this directly by asking one simple question: would you have made this trip anyway, without the app? 
+
+The answer determines whether we're looking at genuine reliance on ride-hailing or just a convenient add-on to travel that would have happened regardless.
 
 ![Respondents ability to make trips in the absence of ride hailing apps](../assets/images/First.png)
 
@@ -38,22 +41,23 @@ This helps us assess the reliance on the ride hailing apps.
 
 ---
 
-Below we look at the number of trips made by individuals across the data.
+For respondents who said their trip frequency increased after adopting ride-hailing apps, how many additional trips are we actually talking about? The chart below breaks this down.
+
+The distribution isn't smooth, it clusters heavily around 5 and 10 additional trips per week, with smaller spikes at 14-15 and 20. That clustering at round numbers is common in self-reported survey data: respondents estimating "about how many more trips" tend to round to 5s and 10s rather than reporting exact counts. It's worth keeping in mind when interpreting the precision of any model built on this variable — the underlying behavior is probably smoother than the reported numbers suggest.
 
 ![Trip Distribution](../assets/images/second.png)
 
 
-The figure above shows the distribution of data in terms of trips. The data is rightly skewed since we have a majority of respondents making between 1 to 7 trips in a week and less than 30 percent on the high and very high tiers.
-
 
 ---
-It can be assumed that now with the convenience of the ride hailing apps, individuals would make more trips. Below we explore this hypothesis based on the respondents answers. 
+
+#### So how has ride-hailing actually changed how often people travel? 
 
 ![Change in number of trips taken using ride hailing apps](../assets/images/third.png)
 
-Most respondents reported that their total number of trips increased after adopting ride-hailing applications. Specifically, 32.6% indicated that their trips increased significantly, while 27.1% reported a slight increase. Therefore one can say that approx. 59% reported that their trip increased with the adoption of ride hailing apps. About 25.1% experienced no change in their travel behaviour, and only 15.2% reported making fewer trips.
+Nearly 60% of respondents report their total trips have increased since adopting these apps, split fairly evenly between "significantly" (32.6%) and "slightly" (27.1%). A quarter say their travel volume hasn't changed at all, and only 15.2% report making fewer trips.
 
-
+This sits in tension with the earlier finding that 64% would have made their trip anyway. Both things can be true at once: ride-hailing may not be the *reason* most individual trips happen, while still nudging people toward traveling more often overally because of easier availability lowering the threshold for taking a trip in the first place, even if any single trip wasn't strictly dependent on the app.
 
 ---
 We also looked at the popular primary means of transport among the respondents. This was supposed to show whether Ride hailing apps is now more popular or rather regularly used among respondents.
@@ -108,14 +112,24 @@ Notes:
 
 ![Effect of predictors on weekly trips](../assets/images/predictors.png)
 
-The regression results indicate that age and income have opposite relationships with weekly travel frequency. Age has a small positive effect, suggesting that older respondents tend to make slightly more weekly trips. In contrast, respondents with a monthly income above KSh 100,000 make, on average, about 1.5 fewer trips per week than respondents in the reference income group. The larger magnitude of the income coefficient indicates that income has a stronger influence on weekly travel behaviour than age.
+**What drives how often people travel?**
 
+Running weekly trip frequency against age and income tells a clear, if modest, story. Both variables are statistically significant (p < 0.001), but they point in different directions:
+
+- **Age has a positive effect**: each additional year of age is associated with roughly 0.15 more trips per week. Older respondents, on average, travel somewhat more frequently — possibly reflecting more established routines, family obligations, or work travel.
+- **Income has a much larger, negative effect**: respondents earning above KSh 100,000/month make about 1.5 *fewer* weekly trips than those below that threshold. This is the more striking result because higher earners aren't traveling more despite likely having greater means to do so. It may reflect remote or flexible work arrangements, fewer errands requiring travel, or simply less reliance on frequent short trips typical of lower-income commuting patterns.
+
+**A caveat worth stating plainly:** the model explains only about 11% of the variation in weekly trips (R² = 0.110). Age and income matter, and matter reliably, but they're far from the whole picture since factors like occupation, household structure, or location within Nairobi likely carry more weight than this model captures.
+
+The residuals also aren't well-behaved: the distribution is right-skewed (skew = 1.15) with fatter tails than a normal distribution (kurtosis = 5.99), and the Jarque-Bera test strongly rejects normality (p < 0.001). This isn't surprising since weekly trip counts are count data with a natural floor at zero, which OLS isn't built to handle well. 
 
 ---
 
-#### What factors influence how many trips one takes?
+**What predicts whether someone's trips increased after adopting ride-hailing apps?**
 
 ```
+
+
 Optimization terminated successfully.
          Current function value: 1.117202
          Iterations: 63
@@ -148,21 +162,33 @@ gender_Male               -0.0103      0.117     -0.088      0.930      -0.239  
 
 ```
 
-The ordered logit model (n = 1,198) reveals that age and income are negatively associated with trip growth, indicating that digital transport platforms generate the greatest additional mobility among younger and lower-income users. Self-employment emerges as the strongest positive predictor, with self-employed individuals significantly more likely to report increased travel, reflecting the mobility demands of flexible and demand-driven work activities. Conversely, unemployed respondents are substantially less likely to experience trip growth, suggesting that fare affordability remains a key constraint. Gender does not have a statistically significant effect on trip changes. The coefficients for students and informal employees exhibit extremely large standard errors, indicating estimation instability due to sparse observations and should therefore be interpreted with caution.
+This ordered logit model looks at the same "change in trips" categories from the pie chart above (decreased, stayed the same, increased slightly, increased significantly) and asks what predicts landing in a higher category. Several predictors come through cleanly:
+
+- **Age has a negative effect** (coef = -0.100, p < 0.001): This means that older respondents are less likely to report increased trip-taking. Combined with the earlier OLS result, this is worth sitting with because older respondents take more trips *in absolute terms*, but ride-hailing specifically hasn't shifted their travel behavior as much as it has for younger respondents.
+- **Higher income is associated with a smaller increase** (coef = -0.208, p = 0.010), which is consistent with the earlier finding that higher earners aren't the ones driving up trip frequency.
+- **Self-employment stands out as the strongest positive driver** (coef = 2.363, p < 0.001) — self-employed respondents are substantially more likely to report increased trips, plausibly because ride-hailing plugs directly into income-generating movement (client visits, deliveries, multiple work sites) rather than discretionary travel.
+- **Unemployment has a strong negative effect** (coef = -2.212, p < 0.001) — unemployed respondents are markedly less likely to report increased trips, which tracks with tighter budget constraints limiting ride-hailing use to necessity trips only.
+- **Gender shows no meaningful effect** (p = 0.930), suggesting trip-frequency changes aren't gendered in this sample.
+
+**Note** The coefficients for **Student** (-29.51, SE = 15,100) and **Informal Employment** (16.61, SE = 609) are not usable. The standard errors are enormous relative to the coefficients, and this is a textbook sign of *near-perfect separation* likely because very few students or informally employed respondents fall into certain outcome categories, so the model can't estimate those effects reliably. 
 
 ---
 ### 2. Trade
 #### Which reasons constitutes most trips taken by the respondents?
-The biggest question we ask here is do the ride hailing apps enable economic activity?
+**What are people actually using these apps for?**
+
+If there was any doubt that ride-hailing in Nairobi is fundamentally a *work* tool rather than a lifestyle convenience, this chart settles it. 
 
 ![Purpose of trips in the Last 7 days](../assets/images/Trade.png)
 
 
-Work-related trips were the most common purpose for travel during the past seven days, followed by shopping trips. Food pickup and delivery accounted for a smaller share of trips, while business trips were the least common. Overall, the findings suggest that most travel was driven by daily necessities and employment-related activities, rather than business or delivery purposes.
+Work-related trips accounted for the largest share of travel in the last seven days (46.3%, 1,160 trips), exceeding the combined total of all other trip purposes. Shopping was the second most common reason for travel (20.0%), followed by business trips (14.1%). Delivery (9.6%) and food pickup (9.9%) represented a relatively small share of overall travel.
+
+These findings complement the regression results, which showed that self-employed respondents were more likely to report increased trip frequency. Together, the results suggest that ride-hailing platforms are used predominantly to support work, business, and essential daily activities, rather than food delivery or other convenience-based services. While ride-hailing applications have expanded beyond transportation, the survey indicates that their primary value for respondents lies in improving access to employment, business opportunities, and routine activities. This suggests that, within this sample, digital transportation platforms function more as an enabler of economic participation than as a driver of lifestyle or convenience-oriented consumption.
 
 ---
 
-#### What factors influence how much respondents spend on transportation?
+#### Does More Travel Lead to Higher Transport Spending?
 
 ```
                              OLS Regression Results                            
@@ -194,14 +220,21 @@ Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 
 ```
-Regression analysis indicates that individuals who use ride-hailing platforms such as Uber and Bolt do not exhibit higher overall weekly transport expenditure. In fact, the estimated coefficient suggests that users may spend slightly less on transport, holding frequency, age, and income constant.
+The analysis found no statistically significant relationship between the number of weekly trips and overall transport expenditure. This suggests that respondents who travel more do not necessarily spend more on transport. Instead, they may be using ride-hailing services as a substitute for other transport options, rather than increasing their overall transport costs.
 
-This finding suggests and confirm that ride-hailing services may substitute for other forms of transport rather than simply adding additional costs. Users may be reallocating their transport spending toward more efficient or convenient modes without increasing total expenditure.
+Income and age were the only significant predictors of transport expenditure. Respondents earning more than KSh 100,000 per month reported lower transport spending than those in the reference income group, while older respondents tended to spend slightly more on transportation.
+
+Although these relationships were statistically significant, the model explained only 2.4% of the variation in transport spending (R² = 0.024). This indicates that most differences in transport expenditure are influenced by factors not captured in this study, such as travel distance, transport mode, vehicle ownership, fuel costs, and commuting patterns.
+
+
+The findings suggest that ride-hailing platforms are changing how people travel rather than substantially increasing how much they spend on transportation. Users appear to integrate these services into their existing travel patterns rather than using them in ways that significantly increase their overall transport expenditure.
 
 ---
 
 ### 3. Diet
-#### What factors influences the number of meals ordered?
+#### **What predicts how many meals people order via app?**
+
+The analysis examined whether age, income, and delivery app usage influence the number of meals respondents order through mobile applications.
 
 ```
                             OLS Regression Results                            
@@ -233,19 +266,21 @@ Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 
 ```
+The strongest predictor was delivery app usage. Respondents who used food delivery services ordered significantly more meals than those who did not, confirming that active users are much more likely to rely on these platforms for meal purchases.
 
-Regression analysis reveals a strong and statistically significant relationship between the use of food delivery platforms such as Uber Eats and increased food ordering behavior. Users of these platforms order, on average, approximately 1.16 more meals per week than non-users, holding age and income constant.
+Age also had a significant effect, with younger respondents ordering slightly more meals through mobile apps than older respondents. In contrast, income was not a significant predictor, suggesting that food ordering through apps was not strongly influenced by whether respondents earned above or below KSh 100,000 per month.
 
-This effect is substantial, effectively representing a shift from near-zero platform-based consumption among non-users to regular weekly usage among adopters. The results suggest that delivery platforms are not merely substituting traditional dining options but are enabling new forms of consumption by reducing access barriers such as travel time and effort.
+The model explained approximately 19% of the variation in the number of meals ordered (R² = 0.190). While this indicates that the selected variables contribute to understanding food-ordering behaviour, other factors—such as convenience, restaurant availability, delivery costs, lifestyle, and personal preferences—are also likely to influence how often people order meals through mobile apps.
 
-Age is negatively associated with platform-based food ordering, indicating that younger individuals are more responsive to these technologies, while income does not significantly influence ordering behavior. This suggests that the impact of delivery platforms is broadly distributed across income groups.
-
-Overall, the findings provide strong evidence that digital delivery platforms are reshaping dietary patterns by increasing both the frequency and accessibility of prepared food consumption.
 
 ---
 
-#### What influences the spending on food?
+#### What influences the variety of food choice?
 ```
+
+The analysis examined whether age, income, and the use of food delivery services are associated with the variety of foods consumed.
+
+
                              OrderedModel Results                             
 ==============================================================================
 Dep. Variable:       food_variety_ord   Log-Likelihood:                -460.65
@@ -265,12 +300,9 @@ inc_100k          0.5889      0.138      4.268      0.000       0.318       0.85
 0.0/1.0          34.8295   3.04e+04      0.001      0.999   -5.96e+04    5.97e+04
 ```
 
-Analysis of self-reported dietary changes indicates a strong association between the use of food delivery platforms such as Uber Eats and increased variety in food consumption. A large majority of users report that their dietary variety has increased since adopting these platforms.
+The results indicate that food delivery users generally reported greater food variety than non-users, suggesting that access to delivery platforms may expose consumers to a wider range of meal options. However, the model could not reliably estimate the size of this effect because almost all delivery users reported high levels of food variety. As a result, the relationship should be interpreted qualitatively rather than quantitatively.
 
-Attempts to formally estimate this relationship using an ordered logit model resulted in convergence issues due to near-perfect separation, suggesting that platform usage is a dominant predictor of increased variety. This indicates that the effect is both strong and systematic.
-
-These findings suggest that delivery platforms expand consumers’ accessible choice sets, enabling greater dietary diversity beyond what was previously feasible.
-
+Income was also a significant predictor of food variety. Respondents earning more than KSh 100,000 per month were more likely to report consuming a greater variety of foods than those in the reference income group. In contrast, age was not significantly associated with food variety.
 
 ---
 The big question we ask here is whether ride hailing apps have drawn people away from normal cooking and buying food locally to ordering foods online which brings convenience and saves on time. We therefore assess this by looking at the number of orders one makes in a week. 
@@ -307,7 +339,15 @@ Age (Years)      -0.0064      0.018     -0.355      0.723      -0.042       0.02
 inc_100k          1.0484      0.119      8.828      0.000       0.816       1.281
 0.0/1.0           2.7095      0.488      5.557      0.000       1.754       3.665
 =================================================================================
+This analysis examined whether the number of meals ordered through mobile apps, age, and income influence the variety of foods consumed.
 
+The results show that the number of meals ordered through mobile apps was the strongest predictor of food variety. Respondents who ordered meals more frequently were significantly more likely to report consuming a wider variety of foods. This suggests that regular use of food delivery services provides greater access to diverse meal options.
+
+Income was also positively associated with food variety. Respondents earning more than KSh 100,000 per month were more likely to report greater dietary diversity, even after accounting for how often they ordered meals. This indicates that higher income may increase access to a broader range of food choices.
+
+In contrast, age was not significantly associated with food variety, suggesting that dietary diversity was influenced more by ordering behaviour and income than by respondents' age.
+
+Key takeaway: The findings suggest that frequent use of food delivery services and higher income are associated with greater food variety. Among the factors examined, the frequency of ordering meals through mobile apps emerged as the strongest predictor of dietary diversity.
 
 ```
 
@@ -373,7 +413,9 @@ Regression analysis further showed that demographic characteristics such as age 
 Overall, the study provides evidence that digital transportation platforms contribute to increased mobility, facilitate access to economic activities, and influence food consumption behaviours. Although they do not completely replace traditional modes of transport, they have become an important component of the urban transport ecosystem by improving convenience, accessibility, and travel flexibility for many users.
 
 ---
+*Author: Joy Omondi.* 
 
+Joy Omondi is a Quantitative Analyst at Innova Limited, where she builds financial models for central banks and regulators across Africa.*
 
 
 
