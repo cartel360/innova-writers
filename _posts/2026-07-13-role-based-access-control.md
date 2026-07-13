@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "Understanding Role-Based Access Control (RBAC)"
-date: 2026-06-16
+date: 2026-07-13
 author: Joseph Ndungi
 tags: [security, authentication, authorization, RBAC, software engineering]
 categories: [Software Engineering]
 canonical_url: ""
-description: c
+description: A practical guide to Role-Based Access Control (RBAC), how it works, why it matters, and how to implement it effectively in modern applications.
 image: assets/images/rbac.jpg
 ---
 
