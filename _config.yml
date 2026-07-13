@@ -43,6 +43,7 @@ markdown: kramdown
 
 kramdown:
   input: GFM
+  auto_ids: true
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     block:

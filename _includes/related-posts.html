@@ -1,0 +1,52 @@
+{% assign has_related = false %}
+{% for post in site.posts %}
+    {% if post.url == page.url %}
+        {% continue %}
+    {% endif %}
+    {% for category in page.categories %}
+        {% if post.categories contains category %}
+            {% assign has_related = true %}
+            {% break %}
+        {% endif %}
+    {% endfor %}
+    {% if has_related %}
+        {% break %}
+    {% endif %}
+{% endfor %}
+
+{% if has_related %}
+<section class="related-posts">
+    <h3 class="related-posts__title">Related articles</h3>
+    <div class="row">
+        {% assign shown = 0 %}
+        {% for post in site.posts %}
+            {% if post.url == page.url or shown >= 3 %}
+                {% continue %}
+            {% endif %}
+            {% assign matched = false %}
+            {% for category in page.categories %}
+                {% if post.categories contains category %}
+                    {% assign matched = true %}
+                    {% break %}
+                {% endif %}
+            {% endfor %}
+            {% if matched %}
+                {% assign shown = shown | plus: 1 %}
+                <div class="col-md-4 mb-4">
+                    <a href="{{ site.baseurl }}{{ post.url }}" class="related-posts__card">
+                        {% if post.image %}
+                        <div class="related-posts__thumb">
+                            <img src="{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}" alt="">
+                        </div>
+                        {% endif %}
+                        <div class="related-posts__content">
+                            <h4>{{ post.title }}</h4>
+                            <p>{{ post.description | strip_html | truncatewords: 18 }}</p>
+                        </div>
+                    </a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
