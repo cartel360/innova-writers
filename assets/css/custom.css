@@ -1390,9 +1390,39 @@ body.page-spotlight .site-content {
     gap: 0.85rem;
 }
 
+/* Default: 2 columns on wider screens */
 @media (min-width: 640px) {
     .spotlight-badges {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Exactly 3 highlights: one centered on top, two on the row below */
+@media (min-width: 640px) {
+    .spotlight-badges:has(.spotlight-badge:nth-child(3):last-child) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 42rem;
+        margin: 0 auto;
+    }
+
+    .spotlight-badges:has(.spotlight-badge:nth-child(3):last-child) .spotlight-badge:first-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: min(100%, 22rem);
+    }
+}
+
+/* Wide screens: all 3 in one row */
+@media (min-width: 900px) {
+    .spotlight-badges:has(.spotlight-badge:nth-child(3):last-child) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        max-width: none;
+    }
+
+    .spotlight-badges:has(.spotlight-badge:nth-child(3):last-child) .spotlight-badge:first-child {
+        grid-column: auto;
+        justify-self: stretch;
+        width: auto;
     }
 }
 
