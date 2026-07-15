@@ -16,12 +16,18 @@ module Jekyll
       format('%04d-%02d', year, month)
     end
 
+    def featured?(post)
+      value = post.data['featured']
+      value == true || value.to_s.strip.downcase == 'true'
+    end
+
     def build_author_stats(site, year, month)
       site.data.fetch('team', []).map do |member|
         name = member['name']
         posts = site_posts(site).select { |post| post.data['author'] == name }
         month_posts = posts.select { |post| post.date.month == month && post.date.year == year }
-        featured_month = month_posts.count { |post| post.data['featured'] }
+        featured_month = month_posts.count { |post| featured?(post) }
+        total_featured = posts.count { |post| featured?(post) }
 
         {
           'name' => name,
@@ -30,6 +36,7 @@ module Jekyll
           'description' => member['description'],
           'social_link' => member['social-link'] || member['social_link'],
           'total_posts' => posts.size,
+          'total_featured' => total_featured,
           'month_posts' => month_posts.size,
           'featured_month' => featured_month,
           'latest_post_date' => posts.first&.date&.strftime('%B %-d, %Y'),
@@ -37,7 +44,7 @@ module Jekyll
             {
               'title' => post.data['title'],
               'url' => post.url,
-              'featured' => post.data['featured'] ? true : false,
+              'featured' => featured?(post),
               'date' => post.date.strftime('%b %-d')
             }
           end
@@ -59,10 +66,17 @@ module Jekyll
         'year' => year,
         'top_authors' => ranked_month.first(3),
         'active_authors' => ranked_month,
-        'all_authors' => stats.sort_by { |author| [-author['month_posts'], -author['total_posts'], author['name']] },
+        'all_authors' => stats.sort_by { |author| [-author['month_posts'], -author['featured_month'], -author['total_posts'], author['name']] },
         'badges' => build_badges(stats, ranked_month),
-        'total_month_articles' => active_this_month.sum { |author| author['month_posts'] }
+        'total_month_articles' => active_this_month.sum { |author| author['month_posts'] },
+        'total_month_featured' => active_this_month.sum { |author| author['featured_month'] }
       }
+    end
+
+    def available_month_keys(site, now)
+      keys = site_posts(site).map { |post| month_key(post.date.year, post.date.month) }
+      keys << month_key(now.year, now.month)
+      keys.uniq.sort.reverse
     end
 
     def compute(site)
@@ -73,13 +87,13 @@ module Jekyll
       months = {}
       month_options = []
 
-      (1..current_month).each do |month|
-        data = compute_month(site, year, month)
-        months[data['key']] = data
-        month_options << { 'key' => data['key'], 'label' => data['month_label'] }
+      available_month_keys(site, now).each do |key|
+        y, m = key.split('-').map(&:to_i)
+        data = compute_month(site, y, m)
+        months[key] = data
+        month_options << { 'key' => key, 'label' => data['month_label'] }
       end
 
-      month_options.reverse!
       current_key = month_key(year, current_month)
       current = months.fetch(current_key)
 
@@ -111,7 +125,7 @@ module Jekyll
       end
 
       featured_leader = stats.max_by { |author| author['featured_month'] }
-      if featured_leader && featured_leader['featured_month'].positive? && featured_leader['name'] != ranked_month.first&.dig('name')
+      if featured_leader && featured_leader['featured_month'].positive?
         badges << {
           'id' => 'featured-star',
           'label' => 'Featured star',

@@ -195,7 +195,8 @@ function initSpotlightMonthFilter() {
                         "</a>" +
                         '<div class="spotlight-leaderboard__metrics">' +
                             '<span class="spotlight-metric"><strong>' + author.month_posts + "</strong> this month</span>" +
-                            '<span class="spotlight-metric"><strong>' + author.featured_month + "</strong> featured</span>" +
+                            '<span class="spotlight-metric"><strong>' + (author.featured_month || 0) + "</strong> featured this month</span>" +
+                            '<span class="spotlight-metric"><strong>' + (author.total_featured || 0) + "</strong> featured all time</span>" +
                             '<span class="spotlight-metric"><strong>' + author.total_posts + "</strong> total</span>" +
                         "</div>" +
                     "</div>"
@@ -242,8 +243,9 @@ function initSpotlightMonthFilter() {
                     "</a>" +
                     '<ul class="spotlight-card__stats">' +
                         "<li><strong>" + author.month_posts + "</strong> this month</li>" +
-                        "<li><strong>" + author.featured_month + "</strong> featured</li>" +
-                        "<li><strong>" + author.total_posts + "</strong> all time</li>" +
+                        "<li><strong>" + (author.featured_month || 0) + "</strong> featured this month</li>" +
+                        "<li><strong>" + (author.total_featured || 0) + "</strong> featured all time</li>" +
+                        "<li><strong>" + author.total_posts + "</strong> posts all time</li>" +
                     "</ul>" +
                     articlesBlock +
                 "</article>"

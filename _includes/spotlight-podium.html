@@ -12,8 +12,9 @@
             </a>
             <ul class="spotlight-card__stats">
                 <li><strong>{{ author.month_posts }}</strong> this month</li>
-                <li><strong>{{ author.featured_month }}</strong> featured</li>
-                <li><strong>{{ author.total_posts }}</strong> all time</li>
+                <li><strong>{{ author.featured_month }}</strong> featured this month</li>
+                <li><strong>{{ author.total_featured }}</strong> featured all time</li>
+                <li><strong>{{ author.total_posts }}</strong> posts all time</li>
             </ul>
             {% if author.month_articles.size > 0 %}
             <div class="spotlight-card__articles">
