@@ -5,7 +5,7 @@ author: Carlvin Jerry
 categories: [Life]
 tags: [Leadership]
 description: "A year into leading a department, an honest look at the messier lessons behind decision-making, imposter syndrome, and holding a team together."
-image: 
+image: assets/images/beginner.jpg
 featured: true
 ---
 
