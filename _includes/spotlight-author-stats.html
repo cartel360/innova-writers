@@ -1,0 +1,19 @@
+{% assign stats = include.author %}
+<div class="spotlight-stat-grid">
+    <div class="spotlight-stat spotlight-stat--month">
+        <span class="spotlight-stat__value">{{ stats.month_posts }}</span>
+        <span class="spotlight-stat__label">This month</span>
+    </div>
+    <div class="spotlight-stat spotlight-stat--featured-month{% if stats.featured_month > 0 %} is-highlight{% endif %}">
+        <span class="spotlight-stat__value">{{ stats.featured_month }}</span>
+        <span class="spotlight-stat__label">Featured this month</span>
+    </div>
+    <div class="spotlight-stat spotlight-stat--featured-total{% if stats.total_featured > 0 %} is-highlight{% endif %}">
+        <span class="spotlight-stat__value">{{ stats.total_featured }}</span>
+        <span class="spotlight-stat__label">Featured all time</span>
+    </div>
+    <div class="spotlight-stat spotlight-stat--total">
+        <span class="spotlight-stat__value">{{ stats.total_posts }}</span>
+        <span class="spotlight-stat__label">Posts all time</span>
+    </div>
+</div>

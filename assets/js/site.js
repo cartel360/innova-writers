@@ -182,6 +182,30 @@ function initSpotlightMonthFilter() {
         return count === 1 ? "author" : "authors";
     }
 
+    function renderAuthorStats(author) {
+        var featuredMonth = author.featured_month || 0;
+        var totalFeatured = author.total_featured || 0;
+
+        function statTile(modifier, value, label, highlight) {
+            var highlightClass = highlight ? " is-highlight" : "";
+            return (
+                '<div class="spotlight-stat spotlight-stat--' + modifier + highlightClass + '">' +
+                    '<span class="spotlight-stat__value">' + value + "</span>" +
+                    '<span class="spotlight-stat__label">' + label + "</span>" +
+                "</div>"
+            );
+        }
+
+        return (
+            '<div class="spotlight-stat-grid">' +
+                statTile("month", author.month_posts, "This month", false) +
+                statTile("featured-month", featuredMonth, "Featured this month", featuredMonth > 0) +
+                statTile("featured-total", totalFeatured, "Featured all time", totalFeatured > 0) +
+                statTile("total", author.total_posts, "Posts all time", false) +
+            "</div>"
+        );
+    }
+
     function renderLeaderboard(authors) {
         return authors
             .filter(function (author) { return author.total_posts > 0; })
@@ -193,12 +217,12 @@ function initSpotlightMonthFilter() {
                             '<img src="' + baseUrl + escapeHtml(author.image) + '" alt="' + escapeHtml(author.name) + '">' +
                             "<span>" + escapeHtml(author.name) + "</span>" +
                         "</a>" +
-                        '<div class="spotlight-leaderboard__metrics">' +
+                        '<p class="spotlight-leaderboard__metrics">' +
                             '<span class="spotlight-metric"><strong>' + author.month_posts + "</strong> this month</span>" +
                             '<span class="spotlight-metric"><strong>' + (author.featured_month || 0) + "</strong> featured this month</span>" +
                             '<span class="spotlight-metric"><strong>' + (author.total_featured || 0) + "</strong> featured all time</span>" +
                             '<span class="spotlight-metric"><strong>' + author.total_posts + "</strong> total</span>" +
-                        "</div>" +
+                        "</p>" +
                     "</div>"
                 );
             })
@@ -241,12 +265,7 @@ function initSpotlightMonthFilter() {
                         '<img src="' + baseUrl + escapeHtml(author.image) + '" alt="' + escapeHtml(author.name) + '" class="spotlight-card__avatar">' +
                         '<h3 class="spotlight-card__name">' + escapeHtml(author.name) + "</h3>" +
                     "</a>" +
-                    '<ul class="spotlight-card__stats">' +
-                        "<li><strong>" + author.month_posts + "</strong> this month</li>" +
-                        "<li><strong>" + (author.featured_month || 0) + "</strong> featured this month</li>" +
-                        "<li><strong>" + (author.total_featured || 0) + "</strong> featured all time</li>" +
-                        "<li><strong>" + author.total_posts + "</strong> posts all time</li>" +
-                    "</ul>" +
+                    renderAuthorStats(author) +
                     articlesBlock +
                 "</article>"
             );

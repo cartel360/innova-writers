@@ -1270,20 +1270,81 @@ body.page-spotlight .site-content {
     margin: 0;
 }
 
-.spotlight-card__stats {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1rem;
+.spotlight-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.4rem;
+    width: 100%;
+    margin: 0 0 0.85rem;
+}
+
+.spotlight-stat {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    font-size: 0.85rem;
+    gap: 0.1rem;
+    padding: 0.4rem 0.35rem;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    text-align: center;
+    min-height: 2.85rem;
+}
+
+.spotlight-stat__value {
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--heading-font-color);
+    font-variant-numeric: tabular-nums;
+}
+
+.spotlight-stat__label {
+    font-size: 0.58rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
     color: var(--color-muted);
 }
 
-.spotlight-card__stats strong {
+.spotlight-stat--month {
+    background: linear-gradient(180deg, rgba(0, 63, 92, 0.06) 0%, var(--color-bg) 100%);
+    border-color: rgba(0, 63, 92, 0.12);
+}
+
+.spotlight-stat--month .spotlight-stat__value {
+    color: var(--color-primary);
+}
+
+.spotlight-stat.is-highlight,
+.spotlight-stat--featured-month.is-highlight,
+.spotlight-stat--featured-total.is-highlight {
+    background: linear-gradient(180deg, rgba(44, 166, 185, 0.12) 0%, rgba(44, 166, 185, 0.04) 100%);
+    border-color: rgba(44, 166, 185, 0.28);
+}
+
+.spotlight-stat.is-highlight .spotlight-stat__value,
+.spotlight-stat--featured-month.is-highlight .spotlight-stat__value,
+.spotlight-stat--featured-total.is-highlight .spotlight-stat__value {
+    color: var(--color-accent);
+}
+
+.spotlight-stat--total .spotlight-stat__value {
     color: var(--heading-font-color);
+}
+
+.spotlight-card--rank-1 .spotlight-stat-grid {
+    gap: 0.45rem;
+}
+
+.spotlight-card--rank-1 .spotlight-stat {
+    min-height: 3rem;
+}
+
+.spotlight-card--rank-1 .spotlight-stat__value {
+    font-size: 1rem;
 }
 
 .spotlight-card__articles-label {
@@ -1435,7 +1496,8 @@ body.page-spotlight .site-content {
 .spotlight-leaderboard__metrics {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem 1.25rem;
+    gap: 0.5rem 1rem;
+    margin: 0;
     font-size: 0.85rem;
     color: var(--color-muted);
 }

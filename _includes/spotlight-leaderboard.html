@@ -10,12 +10,12 @@
                     <img src="{{ site.baseurl }}{{ author.image }}" alt="{{ author.name }}">
                     <span>{{ author.name }}</span>
                 </a>
-                <div class="spotlight-leaderboard__metrics">
+                <p class="spotlight-leaderboard__metrics">
                     <span class="spotlight-metric"><strong>{{ author.month_posts }}</strong> this month</span>
                     <span class="spotlight-metric"><strong>{{ author.featured_month }}</strong> featured this month</span>
                     <span class="spotlight-metric"><strong>{{ author.total_featured }}</strong> featured all time</span>
                     <span class="spotlight-metric"><strong>{{ author.total_posts }}</strong> total</span>
-                </div>
+                </p>
             </div>
         {% endif %}
     {% endfor %}
@@ -52,12 +52,12 @@
                     <img src="{{ site.baseurl }}{{ member.image }}" alt="{{ author_name }}">
                     <span>{{ author_name }}</span>
                 </a>
-                <div class="spotlight-leaderboard__metrics">
+                <p class="spotlight-leaderboard__metrics">
                     <span class="spotlight-metric"><strong>{{ month_posts }}</strong> this month</span>
                     <span class="spotlight-metric"><strong>{{ featured_month }}</strong> featured this month</span>
                     <span class="spotlight-metric"><strong>{{ total_featured }}</strong> featured all time</span>
                     <span class="spotlight-metric"><strong>{{ total_posts }}</strong> total</span>
-                </div>
+                </p>
             </div>
         {% endif %}
     {% endfor %}
