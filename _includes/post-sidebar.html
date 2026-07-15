@@ -1,0 +1,90 @@
+{% assign author_data = site.data.team | where: "name", page.author | first %}
+{% assign author_posts = site.posts | where: "author", page.author %}
+
+<aside class="post-sidebar" aria-label="Article sidebar">
+    {% if author_data %}
+    <section class="post-sidebar__block post-sidebar__author">
+        <p class="post-sidebar__eyebrow">Written by</p>
+        <a href="{{ site.baseurl }}{{ author_data.link }}" class="post-sidebar__author-link">
+            {% if author_data.image %}
+            <img src="{{ site.baseurl }}{{ author_data.image }}" alt="{{ author_data.name }}" class="post-sidebar__author-avatar">
+            {% endif %}
+            <div>
+                <strong class="post-sidebar__author-name">{{ author_data.name }}</strong>
+                <span class="post-sidebar__author-meta">{{ author_posts.size }} article{% if author_posts.size != 1 %}s{% endif %}</span>
+            </div>
+        </a>
+        {% if author_data.description %}
+        <p class="post-sidebar__author-bio">{{ author_data.description | truncatewords: 28 }}</p>
+        {% endif %}
+        <a href="{{ site.baseurl }}{{ author_data.link }}" class="post-sidebar__cta">View profile</a>
+    </section>
+    {% endif %}
+
+    {% assign more_count = 0 %}
+    {% for post in author_posts %}
+        {% if post.url != page.url %}
+            {% assign more_count = more_count | plus: 1 %}
+        {% endif %}
+    {% endfor %}
+
+    {% if more_count > 0 %}
+    <section class="post-sidebar__block">
+        <h3 class="post-sidebar__title">More from {{ page.author | split: ' ' | first }}</h3>
+        <ul class="post-sidebar__list">
+            {% assign shown = 0 %}
+            {% for post in author_posts %}
+                {% if post.url == page.url or shown >= 3 %}
+                    {% continue %}
+                {% endif %}
+                {% assign shown = shown | plus: 1 %}
+                <li>
+                    <a href="{{ site.baseurl }}{{ post.url }}">
+                        <span class="post-sidebar__list-title">{{ post.title }}</span>
+                        <span class="post-sidebar__list-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+    {% endif %}
+
+    {% assign featured_posts = site.posts | where: "featured", true %}
+    {% assign featured_shown = 0 %}
+    <section class="post-sidebar__block">
+        <h3 class="post-sidebar__title">Featured picks</h3>
+        <ul class="post-sidebar__list">
+            {% for post in featured_posts %}
+                {% if post.url == page.url or featured_shown >= 3 %}
+                    {% continue %}
+                {% endif %}
+                {% assign featured_shown = featured_shown | plus: 1 %}
+                <li>
+                    <a href="{{ site.baseurl }}{{ post.url }}">
+                        <span class="post-sidebar__list-title">{{ post.title }}</span>
+                        <span class="post-sidebar__list-meta">{{ post.author }}</span>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    {% if page.categories.size > 0 %}
+    <section class="post-sidebar__block">
+        <h3 class="post-sidebar__title">Explore topics</h3>
+        <div class="post-sidebar__chips">
+            {% for category in page.categories %}
+            <a href="{{ site.baseurl }}/category/{{ category | slugify }}/" class="post-sidebar__chip">{{ category }}</a>
+            {% endfor %}
+            <a href="{{ site.baseurl }}/categories" class="post-sidebar__chip post-sidebar__chip--muted">All categories</a>
+        </div>
+    </section>
+    {% endif %}
+
+    <section class="post-sidebar__block post-sidebar__spotlight">
+        <p class="post-sidebar__eyebrow">Community</p>
+        <h3 class="post-sidebar__title">Authors Spotlight</h3>
+        <p class="post-sidebar__copy">See who published and got featured this month.</p>
+        <a href="{{ site.baseurl }}/spotlight" class="post-sidebar__cta">View spotlight</a>
+    </section>
+</aside>
