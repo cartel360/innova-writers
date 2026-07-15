@@ -153,11 +153,17 @@
 ================================================== -->
 
     <div class="site-content">
-        <div class="container">
-            <div class="main-content">
+        {% if page.layout == 'post' %}
+            <div class="main-content main-content--post">
                 {{ content }}
             </div>
-        </div>
+        {% else %}
+            <div class="container">
+                <div class="main-content">
+                    {{ content }}
+                </div>
+            </div>
+        {% endif %}
 
         <!-- Begin Footer
 ================================================== -->

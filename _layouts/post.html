@@ -7,18 +7,13 @@ post_class: post-template
 
 <!-- Begin Article
 ================================================== -->
-<div class="container">
-    <div class="row">
+<div class="post-layout">
+    <aside class="post-layout__share" aria-label="Share article">
+        {% include share.html %}
+    </aside>
 
-        <!-- Post Share -->
-        <div class="col-md-2 pl-0 order-2 order-md-1">
-            {% include share.html %}
-        </div>
-
-        <!-- Post -->
+    <div class="post-layout__article">
         {% assign author = site.authors[page.author] %}
-
-        <div class="col-md-7 order-1 order-md-2">
             <div class="mainheading">
 
                 <!-- Author Box -->
@@ -161,14 +156,11 @@ post_class: post-template
             </div>
             <!-- End Categories -->
 
-        </div>
-        <!-- End Post -->
-
-        <div class="col-md-3 order-3 order-md-3">
-            {% include post-sidebar.html %}
-        </div>
-
     </div>
+
+    <aside class="post-layout__sidebar">
+        {% include post-sidebar.html %}
+    </aside>
 </div>
 <!-- End Article
 ================================================== -->
