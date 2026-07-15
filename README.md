@@ -135,7 +135,7 @@ Your article content starts here...
 ```
 
 - `author` must match your name exactly as listed in `_data/team.yml`
-- `featured` is optional (`true` or `false`)
+- `featured` is optional (`true` or `false`). Keep `featured: true` on any article that has been featured so we can track history; the homepage Featured section only shows the **2 most recent** featured articles.
 
 ## Validation rules
 

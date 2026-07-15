@@ -6,6 +6,7 @@ categories: [ Software Development ]
 tags: [red, yellow]
 image: assets/images/serverless-computing.png
 description: "Serverless computing, often referred to as Function-as-a-Service (FaaS), is a cloud computing model where cloud providers automatically manage the infrastructure, allowing developers to focus solely on writing code without the need to provision or maintain servers."
+featured: true
 ---
 
 Serverless computing, often referred to as Function-as-a-Service (FaaS), is a cloud computing model where cloud providers automatically manage the infrastructure, allowing developers to focus solely on writing code without the need to provision or maintain servers.

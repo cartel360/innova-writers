@@ -7,6 +7,7 @@ tags: [functional programming, F#, language features, Discriminated Unions]
 description: "Exploring how F#'s discriminated unions can model complex relationships in domain-driven design, particularly in financial systems."
 image: assets/images/discUnions.jpg
 math: true
+featured: true
 ---
 
 
