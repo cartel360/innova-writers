@@ -44,6 +44,20 @@ post_class: post-template
                 <!-- Post Title -->
                 <h1 class="posttitle">{{ page.title }}</h1>
 
+                <div class="post-meta-bar">
+                    <span class="post-date"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%B %-d, %Y" }}</time></span>
+                    <span class="post-meta-sep">·</span>
+                    {% include reading-time.html content=content %}
+                    {% if page.categories.size > 0 %}
+                    <span class="post-meta-sep">·</span>
+                    <span class="post-meta-categories">
+                        {% for category in page.categories limit:2 %}
+                        <a href="{{ site.baseurl }}/category/{{ category | slugify }}/">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+                        {% endfor %}
+                    </span>
+                    {% endif %}
+                </div>
+
             </div>
 
             <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
@@ -66,18 +80,28 @@ post_class: post-template
 
             <!-- Post Content -->
             <div class="article-post">
-                <!-- Toc if any -->
-                {% if page.toc %}
-                    {% if page.beforetoc %}
-                        <p><em>{{page.beforetoc}}</em></p>
+                {% assign show_toc = true %}
+                {% if page.toc == false %}
+                    {% assign show_toc = false %}
+                {% endif %}
+                {% if show_toc %}
+                    {% capture toc_output %}{% include toc.html html=content h_min=2 h_max=3 sanitize=true class="post-toc-list" %}{% endcapture %}
+                    {% if toc_output contains '<li' %}
+                    <aside class="post-toc" aria-label="Table of contents">
+                        <h3 class="post-toc__title">In this article</h3>
+                        {{ toc_output }}
+                    </aside>
                     {% endif %}
-                    <div class="toc mt-4 mb-4 lead">
-                        <h3 class="font-weight-bold">Summary</h3>
+                {% elsif page.toc %}
+                    {% if page.beforetoc %}
+                        <p><em>{{ page.beforetoc }}</em></p>
+                    {% endif %}
+                    <div class="post-toc">
+                        <h3 class="post-toc__title">Summary</h3>
                         {% include toc.html html=content %}
                     </div>
                 {% endif %}
-                <!-- End Toc -->
-                {{content}}
+                {{ content }}
             </div>
 
             <!-- Rating -->
@@ -88,7 +112,7 @@ post_class: post-template
             {% endif %}
 
             <!-- Post Date -->
-            <p>
+            <p class="d-none">
             <small>
                 <span class="post-date"><time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time></span>           
                 {% if page.last_modified_at %}
@@ -97,13 +121,15 @@ post_class: post-template
                 </small>
             </p>
 
+            {% include related-posts.html %}
+
             <!-- Post Categories -->
             <div class="after-post-cats">
                 <ul class="tags mb-4">
                     {% assign sortedCategories = page.categories | sort %}
                     {% for category in sortedCategories %}
                     <li>
-                        <a class="smoothscroll" href="{{site.baseurl}}/categories#{{ category | replace: " ","-" }}">{{ category }}</a>
+                        <a class="smoothscroll" href="{{ site.baseurl }}/category/{{ category | slugify }}/">{{ category }}</a>
                     </li>
                     {% endfor %}
                 </ul>
